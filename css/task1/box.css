@@ -1,0 +1,13 @@
+.box{
+	width: 100%;
+	padding-bottom: 100%;
+	}
+.littlebox {
+		background-color: orange;
+		padding-bottom: 31%;
+		padding-left: 31%;
+		margin-left: 1%;
+		margin-top: 1%;
+		border-radius: 10%;
+		float: left;
+		}
