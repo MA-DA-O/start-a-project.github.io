@@ -88,7 +88,6 @@ for (let i = 0; i <= days - 1; i++) {
     $(".m-b-b-right").eq(i).append('<p class="record"></p>');
     $(".row").eq(i * 4).append('<div class="triangle"></div>');
     $(".row").eq(i * 4).append('<div class="btn-discuss">杀手杀人</div>');
-
     $(".row").eq(i * 4 + 1).append('<div class="triangle"></div>');
     $(".row").eq(i * 4 + 1).append('<div class="btn-discuss">亡灵发言</div>');
     $(".row").eq(i * 4 + 2).append('<div class="triangle"></div>');
@@ -116,10 +115,43 @@ var death = $(".row").eq((days - 1) * 4 + 1);
 var discuss = $(".row").eq((days - 1) * 4 + 2);
 var vote = $(".row").eq((days - 1) * 4 + 3);
 
-// 记录变量函数
+// 记录变量函数的储存
 function record() {
     sessionStorage.setItem("click", JSON.stringify(click));
     sessionStorage.setItem("days", JSON.stringify(days));
+}
+// 步骤二三的弹框
+function twoAndThree($this) {
+    hiddenAll[0].style.display = "block";
+    hiddenBox[0].style.display = "flex";
+    $(".hidden-btn-left").css("display", "none");
+    $(".hidden-btn-right").css("display", "flex");
+    $(".hidden-btn-right").html('确定')
+    $this.find('.triangle').css("border-right-color", "gray");
+    $this.find('.btn-discuss').css("background", "gray");
+    $this.attr("disabled", true);
+}
+// 第一步第四步的弹框
+function oneAndFour($this) {
+    hiddenAll[0].style.display = "block";
+    hiddenBox[0].style.display = "flex";
+    $(".hidden-btn-right").css("display", "none");
+    $(".hidden-btn-left").css("display", "flex");
+    $(".hidden-btn-left").html('走起')
+    btnNo[0].onclick = function() {
+        location.href = "task2-6.html";
+    };
+    $this.find('.triangle').css("border-right-color", "gray");
+    $this.find('.btn-discuss').css("background", "gray");
+    $this.attr("disabled", true);
+}
+// 按照顺序提醒弹框
+function hint() {
+    hiddenAll[0].style.display = "block";
+    hiddenBox[0].style.display = "flex";
+    $(".hidden-btn-right").css("display", "flex");
+    $(".hidden-btn-left").css("display", "none");
+
 }
 // 四个步骤杀手杀人跳转杀人页面,点击变色等
 killerBtn.click(function() {
@@ -127,99 +159,57 @@ killerBtn.click(function() {
         // 执行函数点击次数+1
         clicks();
         $(".hidden-box-p").html("杀死一位幸运观众");
-        hiddenAll[0].style.display = "block";
-        hiddenBox[0].style.display = "flex";
-        $(".hidden-btn-right").css("display", "none");
-        $(".hidden-btn-left").css("display", "flex");
-        $(".hidden-btn-left").html('走起')
-        btnNo[0].onclick = function() {
-            location.href = "task2-6.html";
-        };
-        $(this).find('.triangle').css("border-right-color", "gray");
-        $(this).find('.btn-discuss').css("background", "gray");
-        // 此处该记录点击次数和天数,变色等数据。
+
+        oneAndFour($(this))
+            // 此处该记录点击次数和天数,变色等数据。
         record();
-        // 按钮点击后失效
-        $(this).attr("disabled", true);
+
+
         KillSelect = 0;
         KillSelect++;
         save();
     } else {
         $(".hidden-box-p").html("请按照顺序来进行游戏");
-        hiddenAll[0].style.display = "block";
-        hiddenBox[0].style.display = "flex";
-        $(".hidden-btn-right").css("display", "flex");
-        $(".hidden-btn-left").css("display", "none");
+        hint()
     }
 });
 death.click(function() {
     if (click == (days - 1) * 4 + 1) {
         clicks();
         $(".hidden-box-p").html("流下鳄鱼的眼泪");
-        hiddenAll[0].style.display = "block";
-        hiddenBox[0].style.display = "flex";
-        $(".hidden-btn-left").css("display", "none");
-        $(".hidden-btn-right").css("display", "flex");
-        $(".hidden-btn-right").html('确定')
-        $(this).find('.triangle').css("border-right-color", "gray");
-        $(this).find('.btn-discuss').css("background", "gray");
+        var there = $(this)
+        twoAndThree($(this))
         record();
-        $(this).attr("disabled", true);
     } else {
         $(".hidden-box-p").html("臭弟弟按顺序来");
-        hiddenAll[0].style.display = "block";
-        hiddenBox[0].style.display = "flex";
-        $(".hidden-btn-right").css("display", "flex");
-        $(".hidden-btn-left").css("display", "none");
+        hint()
     }
 });
 discuss.click(function() {
     if (click == (days - 1) * 4 + 2) {
         clicks();
         $(".hidden-box-p").html("请大家发言");
-        hiddenAll[0].style.display = "block";
-        hiddenBox[0].style.display = "flex";
-        $(".hidden-btn-left").css("display", "none");
-        $(".hidden-btn-right").css("display", "flex");
-        $(".hidden-btn-right").html('确定')
-        $(this).find('.triangle').css("border-right-color", "gray");
-        $(this).find('.btn-discuss').css("background", "gray");
+        twoAndThree($(this))
         record();
-        $(this).attr("disabled", true);
+
     } else {
         $(".hidden-box-p").html("不按顺序给爷爬");
-        hiddenAll[0].style.display = "block";
-        hiddenBox[0].style.display = "flex";
-        $(".hidden-btn-right").css("display", "flex");
-        $(".hidden-btn-left").css("display", "none");
+        hint()
     }
 });
 vote.click(function() {
     if (click == (days - 1) * 4 + 3) {
         clicks();
         $(".hidden-box-p").html("高举民主的旗帜");
-        hiddenAll[0].style.display = "block";
-        hiddenBox[0].style.display = "flex";
-        $(".hidden-btn-right").css("display", "none");
-        $(".hidden-btn-left").css("display", "flex");
-        $(".hidden-btn-left").html('走起')
-        btnNo[0].onclick = function() {
-            location.href = "task2-6.html";
-        };
-        $(this).find('.triangle').css("border-right-color", "gray");
-        $(this).find('.btn-discuss').css("background", "gray");
-        // 此处该记录点击次数和天数等各项需记录的东西
+        oneAndFour($(this))
+            // 此处该记录点击次数和天数等各项需记录的东西
         record();
-        $(this).attr("disabled", true);
         Vote = 0
         Vote++
         save()
     } else {
         $(".hidden-box-p").html("按顺序来");
-        hiddenAll[0].style.display = "block";
-        hiddenBox[0].style.display = "flex";
-        $(".hidden-btn-right").css("display", "flex");
-        $(".hidden-btn-left").css("display", "none");
+        hint()
     }
 });
 // 判断若已经产生点击，则根据点击的次数，进行定义变色和停用按钮。

@@ -4,28 +4,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>获取下标demo</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
     <style>
-        button {
-            width: 200px;
-            height: 100px;
-            background: lawngreen;
+        #main {
+            margin: 50px 0;
+            text-align: center;
+            color: aqua;
+        }
+        
+        #box {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+        #box div {
+            width: 100px;
+            height: 40px;
+            background: aqua;
+            color: darkviolet;
+            text-align: center;
+            line-height: 40px;
         }
     </style>
+
+    <script src="state-machine.js"></script>
 </head>
 
 <body>
-    <button>1212</button>
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
-    <script>
-        var a = []
+    <h2 id="main">万年单身狗</h1>
+        <div id="box">
+            <div id="flowers">送花</div>
+            <div id="confession">表白</div>
+            <div id="propose">求婚</div>
+            <div id="separate">分手</div>
+        </div>
+        <script>
+            var main = document.getElementById("main"),
+                flowers = document.getElementById("flowers"),
+                confession = document.getElementById("confession"),
+                propose = document.getElementById("propose"),
+                separate = document.getElementById("separate");
+            var fsm = new StateMachine({
 
-        $('button').click(function() {
-            a.push(0)
-            console.log(a)
-        })
-    </script>
+                init: 'dog',
+
+                transitions: [
+
+                    {
+                        name: 'flowers',
+                        from: 'dog',
+                        to: 'love'
+                    },
+
+                    {
+                        name: 'confession',
+                        from: ['dog', 'love'],
+                        to: 'together'
+                    },
+
+                    {
+                        name: 'propose',
+                        from: ['love', 'together'],
+                        to: 'marry'
+                    },
+
+                    {
+                        name: 'separate',
+                        from: '*',
+                        to: 'dog'
+                    }
+
+                ],
+
+                methods: {
+                    onEnterDog: function() {
+                        main.innerHTML = '万年单生狗';
+                    },
+                    onEnterLove: function() {
+                        main.innerHTML = '友人已满，恋人未达';
+                    },
+                    onEnterTogether: function() {
+                        main.innerHTML = '亲密恋人';
+                    },
+                    onEnterMarry: function() {
+                        main.innerHTML = '结婚';
+                    }
+                }
+
+            })
+            flowers.onclick = function() {
+                switch (fsm.state) {
+                    case "dog":
+                        fsm.flowers();
+                        break;
+                    case "love":
+                        fsm.confession();
+                        break;
+                    case "together":
+                        fsm.propose();
+                        break;
+                    default:
+                        alert("已经结婚就不要在送花了");
+                }
+                console.log(fsm.state);
+            }
+
+            confession.onclick = function() {
+                switch (fsm.state) {
+                    case "dog":
+                    case "love":
+                        fsm.confession();
+                        break;
+                    case "marry":
+                        alert("已经结婚就不要秀恩爱了");
+                        break;
+                    default:
+                        alert("尝试着送花或者求婚吧");
+                }
+                console.log(fsm.state);
+            }
+
+            propose.onclick = function() {
+                switch (fsm.state) {
+                    case "dog":
+                        alert("先送花建立友情吧");
+                        break;
+                    case "love":
+                    case "together":
+                        fsm.propose();
+                        break;
+                    default:
+                        alert("不要在求婚了");
+                }
+                console.log(fsm.state);
+            }
+
+            separate.onclick = function() {
+                switch (fsm.state) {
+                    case "dog":
+                        alert("(o゜▽゜)o☆单身狗不需要分手");
+                        break;
+                    default:
+                        fsm.separate();
+                }
+                console.log(fsm.state);
+            }
+        </script>
 </body>
-
 
 </html>

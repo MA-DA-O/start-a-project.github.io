@@ -34,15 +34,21 @@ var topText = $(".head-p");
 // 首先进入法官页面，覆盖全屏，仅能看不能点击，只能点击确定按钮。
 if (Judge !== 0) {
     topText.html("法官查看");
+    $(".row-text").html("看妮玛快点")
     hiddenAll[0].style.display = "block";
     hiddenAll[0].style.opacity = "0";
     $(".foot-btn").click(function() {
         location.href = "task2-5.html";
     });
 }
+// 如果进入杀手界面
+if (KillSelect !== 0) {
+    $(".row-text").html("月黑风高杀人夜")
+}
 // 如果进入投票页面
 if (Vote !== 0) {
     topText.html("大家投票");
+    $(".row-text").html("大家觉得你没了你就没了")
 }
 // 死人数组的获取
 if (sessionStorage.getItem("deathMan") !== null) {
@@ -125,6 +131,7 @@ btnBox.click(function() {
     // 如果判断是杀手进入页面，不可点击杀手，不可变色，跳出弹框。且废弃该按钮。 
     if (KillSelect != 0) {
         if (arr[thisBox]["name"] == "杀手") {
+
             hiddenAll[0].style.display = "block";
             hiddenBox[0].style.display = "flex";
             $(".show-ID").eq(thisBox).css("background", "#f5c97b");
@@ -156,22 +163,18 @@ $(".foot-btn").click(function() {
             } else {
                 arrChange[thisBox]["state"] = "die";
                 sessionStorage.setItem("arrChange", JSON.stringify(arrChange));
-
-
                 // 把该下标存入死亡数组，方便回头继续改变颜色。
                 deathMan.push(thisBox);
                 location.href = "task2-5.html";
                 sessionStorage.setItem("deathMan", JSON.stringify(deathMan));
             }
         }
-
     } else { //若没进入杀手页面，则没有限制。
         arrChange[thisBox]["state"] = "die";
         sessionStorage.setItem("arrChange", JSON.stringify(arrChange));
         deathMan.push(thisBox);
         location.href = "task2-5.html";
         sessionStorage.setItem("deathMan", JSON.stringify(deathMan));
-
     }
     if (deathMan.length > 0) {
         let alive = arrChange.filter(function(item) {
@@ -187,18 +190,14 @@ $(".foot-btn").click(function() {
             let killWin = 0;
             killWin++
             sessionStorage.setItem("killWin", JSON.stringify(killWin));
-
             location.href = "task2-7.html"
                 // 跳转杀手胜利页面，生成一个胜利变量，储存，让胜利页面读取，若为几则谁赢。
         } else if (killerAlive.length == 0) {
             let manWin = 0
             manWin++
             sessionStorage.setItem("manWin", JSON.stringify(manWin));
-
-
             location.href = "task2-7.html"
-
-            // 跳转平民胜利页面
+                // 跳转平民胜利页面
         }
         console.log(alive)
         console, log(killerAlive)

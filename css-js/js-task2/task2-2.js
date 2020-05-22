@@ -79,7 +79,9 @@ var btnSet = document.getElementsByClassName("set");
 
 // 根据滑块实时的数量进行改变人数分配
 btnSet[0].onclick = function aaa() {
-    // 每次点击i获取滑块的数值
+    // 点击清除sessionstorange
+    sessionStorage.clear()
+        // 每次点击i获取滑块的数值
     var i = document.getElementById("range").value;
     // 现获取大盒子的节点,小盒子节点
     var box = document.getElementsByClassName("m-t-r-t");

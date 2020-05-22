@@ -1,3 +1,52 @@
+.audio-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+    width: 100%;
+    margin: 0;
+    background-color: #b9e9f5;
+}
+
+.row-text {
+    font-size: 1.3rem;
+    margin: 0;
+    margin-left: 2.3rem;
+}
+
+.row-audio {
+    transform: rotate(180deg);
+}
+
+.audio-img {
+    width: 2.6rem;
+    height: 2.6rem;
+    margin-right: .8rem;
+}
+
+audio {
+    width: 9rem;
+    height: 2rem;
+    position: absolute;
+    right: 0;
+    opacity: 0;
+}
+
+.row-triangle {
+    width: 100%;
+    background-color: #29bde0;
+}
+
+.icon-triangle {
+    border-color: #b9e9f5 transparent transparent transparent;
+    border-style: solid;
+    border-width: .75rem;
+    margin-left: 4rem;
+    background-color: #29bde0;
+    height: 0;
+    width: 0;
+}
+
 // 隐藏的提示按钮和全局黑
 .hidden-all {
     display: none;
