@@ -1,0 +1,54 @@
+.main-t-box {
+  background-color: #29bde0;
+}
+.text-y {
+  width: 75%;
+  margin: auto;
+  font-size: 1.7rem;
+  margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+.text-w {
+  @extend.text-y;
+}
+img {
+  @extend.text-y;
+}
+.row {
+    height: 8rem;
+    width: 100%;
+    margin: 0;
+    border-bottom: 0.1rem solid #dddddd;
+    background-color: #ffffff;
+}
+
+.row-top {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 75%;
+    margin-bottom: .5rem;
+}
+
+.row-text-left {
+    font-size: 1.5rem;
+    color: black;
+  
+}
+
+.row-text-right {
+    font-size: 1rem;
+    color: #c7c7c7;
+  
+}
+
+.row-bottom {
+    width: 75%;
+   
+}
+
+.row-text-bottom {
+  
+    font-size: 1.3rem;
+    color: #c5c5c5;
+}

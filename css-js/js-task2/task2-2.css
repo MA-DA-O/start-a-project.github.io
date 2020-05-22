@@ -1,0 +1,325 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #f0f0f0;
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+main {
+  position: relative;
+}
+button {
+  border: 0;
+  outline: medium;
+  background: #fff;
+  padding: 0;
+}
+p {
+  margin: 0;
+}
+/* 下为滑动条的样式 */
+input[type=range]{ 
+  outline: none; 
+  -webkit-appearance: none;/*清除系统默认样式*/  
+  width: 100%; /*横条宽度*/
+  height: 5px;/*高度*/
+  background-color: #ffe6be; /*颜色*/
+  cursor: pointer;/*鼠标样式食指*/
+  border:0!important;
+  border-radius: 2px;
+}
+/*拖动块的样式*/  
+input[type=range]::-webkit-slider-thumb {  
+  -webkit-appearance: none;/*清除系统默认样式*/  
+  height:30px;/*拖动块高度*/  
+  width: 50px;/*拖动块宽度*/  
+  border: 0; 
+  /* 取消边框 */
+  background: #fff;/*拖动块背景*/ 
+  background-image: url(../img/js2-4/滑块.png);
+  /* 图片，下为覆盖滑块 */
+  background-size: cover;
+}
+/* 如何更改滑动过后的颜色，没思路。 */
+
+.killer{
+  display: flex;
+  min-width: 50%;
+  height: 2rem;
+  font-size: 2rem;
+  color: #d9d9d9;
+  align-items: center;
+  justify-content: center;
+  margin:2rem 0 0;
+}
+.killer span{
+  width: 1rem;
+  height: 1rem;
+  background: #fab344;
+  margin: 0 2rem;
+  }
+.man{
+  display: flex;
+  min-width: 50%;
+  height: 2rem;
+  font-size: 2rem;
+  color: #d9d9d9;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0 0;
+}
+.man span{
+  width: 1rem;
+  height: 1rem;
+  background: #29bde0;
+  margin: 0 2rem;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+.head-wrap {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #29bde0;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.head-blank {
+  height: 6rem;
+}
+.head-btn {
+  outline: medium;
+  border: 0;
+  background: transparent;
+}
+
+.icon-arrow {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-top: 0.3rem solid #fff;
+  border-right: 0.3rem solid #fff;
+  transform: rotate(225deg);
+  padding-right: 0.1rem;
+  margin-left: 1rem;
+}
+.head-p {
+  font-size: 2.5rem;
+  color: #fff;
+  margin: 0;
+  margin-left: 1rem;
+}
+img {
+  margin-right: 1rem;
+}
+.main-topbox {
+  height: 30rem;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  box-shadow: 0 0 3px #e6e6e6;
+  margin-top: 1rem;
+}
+.main-topbox-left {
+  height: 30rem;
+  width: 20%;
+  border-right: 1px solid #d9d9d9;
+  background: #fff;
+  display: flex;
+  font-size: 2.8rem;
+  align-items: center;
+  justify-content: center;
+  writing-mode: tb-rl;
+}
+.main-topbox-right {
+  height: 30rem;
+  width: 80%;
+  background: #fbfbfb;
+}
+.m-t-r-t {
+  overflow: scroll;
+  height: 26rem;
+  width: 100%;
+  border-bottom: 1px solid #d9d9d9;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: baseline;
+}
+.set {
+  background: #fbfbfb;
+  color: #29bde0;
+  font-size: 1.8rem;
+  height: 4rem;
+  width: 100%;
+}
+.set-img {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+.player-group {
+  height: 12rem;
+  width: 100%;
+  background: #fff;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.fisherman-group {
+  width: 90%;
+  margin: 0 auto 0.5rem;
+  padding: 1rem;
+  font-size: 1.8rem;
+  color: #d7d7d7;
+  border-bottom: 1px solid #f0f0f0;
+}
+.killer-group {
+  width: 90%;
+  margin: 0 auto 0.5rem;
+  padding: 1rem;
+  font-size: 1.8rem;
+  color: #d7d7d7;
+  border-bottom: 1px solid #f0f0f0;
+}
+.players {
+  display: flex;
+  flex-direction: column;
+  height: 12rem;
+  width: 100%;
+  background: #fff;
+  margin-top: 0.5rem;
+}
+.input-wrap {
+  display: flex;
+  width: 90%;
+  margin: 1rem auto 1rem;
+}
+.input-wrap-p {
+  font-size: 1.8rem;
+}
+#input {
+  border: 0;
+  background: #f4f5f5;
+  width: 3.5rem;
+  height: 2.5rem;
+  margin: 0 2rem;
+  font-size: 1.8rem;
+  color: #fab344;
+  text-align: center;
+  outline: medium;
+}
+.range-wrap {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+#range {
+  border: 1px solid #fab344;
+}
+.increase-img{
+  margin-left: 1rem;
+}
+.reduce-img{
+  margin-left: 1rem;
+}
+
+
+
+
+.btn-wrap {
+  position: fixed;
+  bottom: 1rem;
+  height: 5rem;
+  width: 95%;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px #e6e6e6;
+}
+#deal {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: medium;
+  background: orange;
+  color: white;
+  font-size: 2rem;
+}
+#killer {
+  font-size: 1.5rem;
+  width: 8px;
+}
+#fisherman {
+  font-size: 1.5rem;
+  width: 14px;
+}
+/* 全局黑透明 */
+.hidden-all {
+  display: none;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background: black;
+}
+.hidden-box {
+  display: none;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-left: -40%;
+  border-radius: 10px;
+  background-color: #fff;
+  flex-flow: column;
+  justify-content: space-between;
+  width: 80%;
+  height: 10rem;
+  z-index: 999;
+}
+.hidden-box-p-wrap {
+  display: flex;
+  justify-content: center;
+  height: 18rem;
+  align-items: center;
+}
+.hidden-box-p {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #29bde0;
+  margin: 0 1rem;
+  display: fl;
+  align-content: center;
+}
+.hidden-btn-wrap {
+  border-top: 1px solid #e6e6ee;
+}
+.hidden-btn-left {
+  width: 50%;
+  border-bottom-left-radius: 10px;
+  font-size: 3rem;
+  color: #e6e6e6;
+  background: white;
+  font-weight: 500;
+  border: 0;
+  border-right: 1px solid #e6e6e6;
+  outline: medium;
+}
+.hidden-btn-right {
+  width: 50%;
+  border-bottom-right-radius: 10px;
+  font-size: 3rem;
+  color: #e6e6e6;
+  background: white;
+  font-weight: 500;
+  border: 0;
+  outline: medium;
+}

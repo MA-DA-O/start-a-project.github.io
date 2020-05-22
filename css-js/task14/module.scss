@@ -1,0 +1,690 @@
+$green: #29b078;
+$gray: #999;
+$white: #fff;
+$snow: #edf1f2;
+$qh: #d0d6d9;
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin colunm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@mixin shadow {
+  box-shadow: 0 0 5px $snow;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+// 此为栅格框
+.container {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+// 此为行
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+// 此为col自适应栅格
+.col {
+  // 意为分配空间缩放1，basis0意为初始宽度0,
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 100%;
+}
+// 此为栅格空间分配最大值
+.col-1 {
+  max-width: 8.33%;
+}
+.col-2 {
+  max-width: 16.66%;
+}
+.col-3 {
+  max-width: 25%;
+}
+.col-4 {
+  max-width: 33.33%;
+}
+.col-5 {
+  max-width: 41.66%;
+}
+.col-6 {
+  max-width: 50%;
+}
+.col-7 {
+  max-width: 58.33%;
+}
+.col-8 {
+  max-width: 66.66%;
+}
+.col-9 {
+  max-width: 75%;
+}
+.col-10 {
+  max-width: 83.33%;
+}
+.col-11 {
+  max-width: 91.66%;
+}
+.col-12 {
+  max-width: 100%;
+}
+.w-100 {
+  width: 100% !important;
+}
+// 预留空间给媒体查询
+
+// 此为整体col的设定
+.col,
+.col-1,
+.col-10,
+.col-11,
+.col-12,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-auto,
+.col-lg,
+.col-lg-1,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-auto,
+.col-md,
+.col-md-1,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-auto,
+.col-sm,
+.col-sm-1,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-auto,
+.col-xl,
+.col-xl-1,
+.col-xl-10,
+.col-xl-11,
+.col-xl-12,
+.col-xl-2,
+.col-xl-3,
+.col-xl-4,
+.col-xl-5,
+.col-xl-6,
+.col-xl-7,
+.col-xl-8,
+.col-xl-9,
+.col-xl-auto {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+// 此为顶部栏
+.h-t {
+  background-color: white;
+}
+.h-t-l {
+  font-size: 1.4rem $green;
+  @include center;
+}
+.h-t-r {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.t-btn-wrap{
+  position: relative;
+  left: 33px;
+}
+// 此为导航栏外框
+.nav-wrap {
+  height: 10rem;
+  width: 100%;
+  background-color: $green;
+}
+// 导航栏按钮的外部a包裹按钮
+.nav-a {
+  display: inline-block;
+  width: 10rem;
+  height: 10rem;
+  border-bottom: 0.3rem solid transparent;
+  &:hover {
+    border-color: $white;
+  }
+}
+// 导航栏按钮含文字居中
+.nav-btn {
+  width: 100%;
+  height: 9rem;
+  padding-top: 1rem;
+  color: $white;
+  background-color: $green;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.nav-check {
+  display: none;
+}
+label {
+  display: none;
+}
+.menu-icon {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  border: 2px solid #fff;
+  color: #fff;
+  text-align: center;
+  line-height: 24px;
+}
+
+
+// 此为轮播样式
+@keyframes slideshow {
+  0%,
+  25% {
+    margin-left: 0;
+  }
+  35%,
+  60% {
+    margin-left: -100%;
+  }
+  70%,
+  100% {
+    margin-left: -200%;
+  }
+}
+// 自动轮播结束
+// 下为图标第一层
+.icon-wrap-1 {
+  width: 32rem;
+  height: 27.5rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10rem 0;
+  // 图标盒子
+  .icon-box {
+    height: 8.5rem;
+    width: 100%;
+    @include center;
+  }
+  // 图标下的文字
+  .icon-p1 {
+    @include center;
+    font-size: 1.8rem;
+    margin: 2rem 0;
+  }
+  // 图标下文字2
+  .icon-p2 {
+    color: $gray;
+    font-size: 1.6rem;
+    height: 9rem;
+    display: flex;
+    justify-content: center;
+  }
+}
+// 居中间隔的文字
+.interval {
+  font-size: 1.8rem;
+  font-weight: 700;
+  @include center;
+}
+
+// 箭头圆形的组件
+// 外部盒子
+.roundness-wrap {
+  width: 32rem;
+  height: 10rem;
+}
+// 圆形＋字体
+.roundness-box {
+  width: 6rem;
+  height: 6rem;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 3px $gray;
+  font-size: 1.8rem;
+  color: $green;
+  @include center;
+}
+// 中间文字
+.roundness-text {
+  @include center;
+  font-size: 1.4rem;
+  color: $gray;
+  width: 15.5rem;
+}
+
+// 人头像
+// 外部隐形大盒子
+.head-wrap {
+  width: 31rem;
+  @include center;
+}
+.head-box {
+  @include colunm;
+  height: 36rem;
+  margin: 7rem 0 2.5rem;
+  @include shadow;
+  background-color: white;
+  i {
+    margin: 2rem 0;
+  }
+  .head-box-p1 {
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 1.8rem;
+  }
+  .head-box-p2 {
+    padding: 1rem 3rem;
+    flex-wrap: wrap;
+    font-size: 1.6rem;
+    color: $gray;
+  }
+}
+// 下为圆形hover效果圆球
+.roundness-green {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 0.4rem 13rem;
+  background-color: $white;
+  border-radius: 50%;
+  @include shadow;
+  &:hover {
+    background-color: $green;
+  }
+}
+// 下为赞助商盒子
+.icon-wrap-2 {
+  background-color: $white;
+  width: 100%;
+  margin: 7rem 0 9rem;
+}
+.icon-wrap-box {
+  width: 19rem;
+  height: 18rem;
+  @include colunm;
+  justify-content: center;
+
+  &:hover {
+    z-index: 20;
+    box-shadow: 0 0 4px $gray;
+  }
+}
+// 下为友情赞助字体盒子
+.sponsor-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-flow: column wrap;
+  height: 5rem;
+}
+//   下为内部内容，需加栅格框
+.sponsor {
+  width: 6.63rem;
+  text-decoration: none;
+  outline: medium;
+  font-size: 1.4rem;
+  color: $gray;
+  border-bottom: 1px solid transparent;
+  display: flex;
+  flex-shrink: 0;
+  &:hover {
+    border-bottom: 1px solid $green;
+  }
+}
+
+// 底部修真院盒子
+.foot-wrap {
+  background-color: $green;
+}
+// 上边文字大小一致
+.f-t {
+  width: 100%;
+  > a {
+    text-decoration: $white;
+    font-size: 1.5rem;
+    color: $white;
+  }
+}
+// 下边多行的情况下添加div，额外加个类margin就完了。
+.f-b {
+  width: 100%;
+  > a {
+    text-decoration: $white;
+    font-size: 1.4rem;
+    color: $white;
+    outline: medium;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    &:hover {
+      border-color: $white;
+    }
+  }
+}
+.f-b-icon {
+  align-items: flex-end;
+}
+// 文字图片盒子
+.foot-b-wrap {
+  height: auto;
+}
+// 下为最低的文字包裹
+.foot-b {
+  width: 100%;
+  background-color: $green;
+  border-top: 1px solid $snow;
+}
+// 文字样式排列
+.foot-b-p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.2rem $white;
+  word-break: break-all;
+}
+// 下为第二页的主要内容
+// 人头像外壳
+.occupaition {
+  margin: 0 2rem 0 0;
+  @include colunm;
+  box-shadow: 0 0 $gray;
+  padding: 0;
+  position: relative;
+  box-shadow: 0 0 3px #e2e2e2;
+  // 隐藏文字
+  .hidden {
+    position: absolute;
+    display: flex;
+    opacity: 0;
+    flex-flow: column wrap;
+    font-size: 1.5rem;
+    color: antiquewhite;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    transition: opacity .4s ease;
+    .hidden-p1 {
+      margin: 0 0 6vw;
+     
+    }
+    .hidden-p2 {
+      margin: 0 2.5vw;
+    }
+  }
+  //   人头像框和右边文字
+  > .top {
+    border-bottom: 1px solid $snow;
+    //   高度被图片margin撑开
+    display: flex;
+    align-items: center;
+    > .right {
+      // 宽度为百分比
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      > .t-p {
+        font-weight: 700;
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+      }
+      > .b-p {
+        margin: 0 1rem 0 0;
+        font-size: 1.4rem;
+        font-family: 微软雅黑;
+        word-break: break-all;
+      }
+    }
+  }
+  //   星星的行列
+  .row-1-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .row-1 {
+      padding: 0 1rem;
+      width: 50%;
+      border-right: 1px solid $snow;
+      border-bottom: 1px solid $snow;
+      display: flex;
+      align-items: center;
+      font-size: 1.2rem $gray;
+      p {
+        margin: 1rem 1rem 1rem 0;
+        font-size: 1.2rem;
+        color: #a1a1a1;
+      }
+      span {
+        font-size: 1.2rem;
+        color: #f01400;
+        font-weight: 500;
+      }
+      > .p2 {
+        font-size: 1.2rem;
+        color: black;
+        font-weight: 500;
+        margin: 0;
+      }
+    }
+    .row-1-bdr {
+      border-right: 0;
+    }
+  }
+  //   薪资待遇行列
+  .row-2-wrap {
+    display: flex;
+    width: 100%;
+    //   薪资待遇
+    .left-box {
+      display: flex;
+      width: 50%;
+      flex-grow: 1;
+      font-size: 1.2rem;
+      color: $gray;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid $snow;
+      border-right: 1px solid #edf1f2;
+    }
+    // 年数月薪外壳
+    .right-box {
+      width: 50%;
+      flex-grow: 1;
+      @include colunm;
+
+      //   月薪
+      .row-2 {
+        width: 100%;
+        border-bottom: 1px solid #edf1f2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        p {
+          margin: 1rem;
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  //   最下的在学和掌握
+  .row-3-1 {
+    border-bottom: 1px solid $snow;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 1rem;
+    > span {
+      color: red;
+    }
+  }
+  &:hover .hidden {
+    opacity: .8;
+    transition: opacity .4s ease;
+  }
+}
+// 下为方向行
+.direcsiton {
+  display: flex;
+  align-items: center;
+  .first {
+    font-size: 1.4rem $gray;
+  }
+  p {
+    font-size: 1.4rem;
+    margin: 0 1.6rem;
+    &:hover {
+      background-color: $green;
+      color: $white;
+    }
+  }
+}
+
+
+
+
+@media screen and (max-width:1200px){
+  .occupaition {
+    min-width: 47%;
+    max-width: 47%;
+    margin-top: 2rem;
+  }
+  .occupaition > .top {
+    flex-direction: column;
+    > .right {
+      align-items: center;
+    }
+  }
+  .occupaition .row-1-wrap {
+    flex-direction: column;
+    .row-1 {
+      width: 100%;
+    }
+  }
+  .occupaition > .top > .right > .b-p {
+    padding-left: 1rem;
+  }
+}
+@media screen and (max-width: 1335px) {
+  .icon-wrap-box {
+    min-width: 100%;
+  }
+  .sponsor-wrap {
+    height: 12rem;
+    flex-flow: column wrap;
+    align-content: space-between;
+  }
+  .sponsor {
+    margin: 1rem 0 0;
+  }
+
+  
+}
+@media screen and (max-width: 820px) {
+  .foot-b-wrap {
+    min-width: 100%;
+  }
+  .f-b-icon {
+    align-items: flex-start;
+    padding-bottom: 1rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .col-md-100 {
+    min-width: 100%!important;
+  }
+  // 外部高度根据内容自适应
+  .nav-wrap {
+    height: auto;
+  }
+  label {
+    display: block;
+  }
+
+  .t-btn-wrap {
+
+    flex-direction: column;
+    flex-basis: 100%;
+    height: 0;
+    transition: height 0.5s ease;
+    overflow: hidden;
+    .nav-a {
+      width: 100%;
+      .nav-btn {
+        width: 100%;
+        font-size: 2.6rem;
+        height: 6rem;
+      }
+    }
+  }
+  .nav-check:checked + .t-btn-wrap {
+    display: flex;
+    height: 30rem;
+    left: 0;
+  }
+  .icon-wrap-1 {
+    min-width: 50%;
+    margin: 3rem 0;
+  }
+  .head-wrap {
+    min-width: 100%!important;
+  }
+  .occupaition {
+    min-width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  
+  .sponsor-wrap {
+    height: 32rem;
+    align-content: space-around;
+  }
+  
+}

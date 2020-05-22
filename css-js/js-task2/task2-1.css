@@ -1,0 +1,162 @@
+html,
+body {
+  background-color: #f0f0f0;
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0;
+}
+
+.top-wrap {
+  height: 4rem;
+  background-color: #29bde0;
+  width: 100%;
+}
+
+.icon-mune {
+  width: 1.8rem;
+  height: 1.75rem;
+  background-color: white;
+  border-top: 0.25rem solid white;
+  border-bottom: 0.25rem solid white;
+  padding: 0.5rem 0;
+  background-clip: content-box;
+}
+
+main {
+  flex-direction: column;
+  align-items: center;
+}
+
+span {
+  display: block;
+}
+
+i {
+  display: block;
+}
+
+ul {
+  display: block;
+  padding: 0;
+}
+
+.button-mune {
+  width: 1.8rem;
+  height: 1.3rem;
+  margin-top: 1.3rem;
+  margin-left: 1rem;
+  padding: 0;
+  background-color: #29bde0;
+}
+
+.row-first {
+  display: flex;
+  height: 5.9rem;
+  width: 90%;
+  font-size: 1.9rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.3rem;
+  margin-bottom: 1.3rem;
+  border: 0.1rem solid #d0d0d0;
+}
+
+.button-arrow {
+  height: 1.5rem;
+  margin-left: 1.5rem;
+  width: 1.5rem;
+  background-color: white;
+  padding: 0;
+  border: 0;
+  outline: medium;
+}
+.button-arrow:hover {
+  background-color: transparent;
+}
+.icon-arrow {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-top: 0.3rem solid #e3e3e3;
+  border-right: 0.3rem solid #e3e3e3;
+  transform: rotate(45deg);
+  padding-right: 0.1rem;
+}
+
+.big-box {
+  width: 90%;
+  height: 39rem;
+  border: 0.1rem solid #d0d0d0;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.row-1 {
+  font-size: 1.9rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.6rem;
+  height: 4.5rem;
+  width: 100%;
+  background-color: #ffffff;
+  border: 0;
+  border-bottom: 0.1rem solid #fdd793;
+  color: #fdd793;
+}
+.row-blue-wrap {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+.row-blue {
+  height: 6.7rem;
+  width: 100%;
+  font-size: 1.6rem;
+  color: #ffffff;
+  border: 0;
+  outline: medium;
+  background-color: #69d1e9;
+}
+
+.row-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  width: 100%;
+  font-size: 1.2rem;
+  border: 0;
+}
+
+.row-roundness {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  padding: 0;
+}
+
+.roundness {
+  height: 0.85rem;
+  width: 0.85rem;
+  margin: 0.6rem;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+}
+
+.blue-roundness {
+  background-color: #69d1e9;
+}
+
+.trimark-wrap {
+  position: absolute;
+  top: 30.5rem;
+  right: 10%;
+}
+
+.trimark-size {
+  height: 2.75rem;
+  width: 1.4rem;
+}

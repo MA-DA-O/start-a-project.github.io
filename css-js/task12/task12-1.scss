@@ -1,0 +1,217 @@
+html,
+body {
+  font-size: 62.5%;
+  padding: 0;
+  margin: 0;
+}
+$blue: #5fc0cd;
+
+$withe: #ffffff;
+
+$gray: #e7e7e7;
+
+$darkgray: #999999;
+
+$red: #e26163;
+$p-size-1: 3vw;
+$p-size-2: 2.5vw;
+$p-size-3: 2vw;
+@mixin row {
+  display: inline-flex;
+  align-items: center;
+  height: 9vw;
+  width: 100%;
+  background-color: $withe;
+  border-bottom: 0.1rem solid $gray;
+}
+@mixin margin-lr {
+  width: 96%;
+  margin: 0 2%;
+}
+
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  min-height: 35px;
+  width: 100%;
+  top: 0;
+  background-color: $blue;
+  height: 7vw;
+  > .close {
+    width: 3vw;
+    height: 3vw;
+    margin-left: 2vw;
+    border: 1px;
+    border-left: 0;
+    border-style: solid;
+    border-bottom: 0;
+    border-color: white;
+    transform: rotate(225deg);
+    background-color: transparent;
+    outline: medium;
+  }
+  > p {
+    margin: 0;
+    color: $withe;
+    font-size: $p-size-1;
+  }
+  > .close-blank {
+    visibility: hidden;
+    width: 3vw;
+    height: 3vw;
+    margin-left: 2vw;
+  }
+}
+.headblank {
+  height: 6.9vw;
+  width: 100%;
+  min-height: 35px;
+}
+.portrait {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 25vw;
+  background-image: url(../img/人像背景图.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  > .head-portrait {
+    width: 11vw;
+    height: 11vw;
+    padding-left: 2.5vw;
+
+    display: inline-block;
+  }
+  > .portraittext {
+    display: inline-block;
+    height: 15vw;
+    font-size: $p-size-1;
+    color: $withe;
+    margin-left: 2rem;
+    > .mapflag {
+      position: relative;
+      bottom: 2.8vw;
+      width: 2.5vw;
+      height: 2.8vw;
+    }
+    > .mapflagtextsize {
+      display: inline-block;
+      position: relative;
+      bottom: 3vw;
+      font-size: 2.3vw;
+      z-index: 0;
+      color: $withe;
+    }
+  }
+}
+
+main {
+  > .wrap-1 {
+    @include row;
+    > .blueline {
+      color: $blue;
+      border-style: solid;
+      border-width: 0.2rem;
+      height: 1.5rem;
+      margin: 0 10px;
+    }
+    > p {
+      font-size: $p-size-2;
+      font-weight: 600;
+    }
+  }
+  > .wrap {
+    @include row;
+    @include margin-lr;
+    > .spanleftstar {
+      @include center;
+      padding-right: 2.5vw;
+      padding-left: 2.5vw;
+      height: 3.5vw;
+      font-size: $p-size-2;
+      font-weight: 600;
+      border-right: 0.1rem solid $gray;
+      > .star {
+        width: $p-size-1;
+        height: $p-size-1;
+      }
+    }
+    > .not-border {
+      border-right: 0;
+    }
+    > .spanleft {
+      flex-shrink: 0;
+      padding-right: 2vw;
+      padding-left: 2vw;
+      border-right: 0.1rem solid $gray;
+      font-size: 2.8vw;
+      color: $darkgray;
+    }
+    > .spanright {
+      font-size: $p-size-2;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    > .spanred {
+      color: $red;
+    }
+    > .spanright-1 {
+      font-size: $p-size-3;
+    }
+    > .padding-left {
+      padding-left: 3.8vw;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .wrap {
+      height: 10vw;
+    }
+  }
+  .margin-lr-0 {
+    margin: 0;
+    width: 100%;
+  }
+}
+.foot {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 1.5rem;
+  width: 100%;
+  background-color: #ffffff;
+a {
+  > .buttom {
+    height: 10vw;
+    width: 40vw;
+    background-color: white;
+    border: 0.1rem solid #5fc0cd;
+    border-radius: 0.5rem;
+    outline: medium;
+  }
+
+> .btn-left {
+  margin-left: 4%;
+  
+    text-decoration: none;
+     color: #5fc0cd;
+    font-size: $p-size-1;
+  }
+ 
+
+> .btn-right {
+  margin-right: 4%;
+  background-color: $blue;
+ 
+    color: $withe;
+    font-size: $p-size-1;
+  }
+}
+}

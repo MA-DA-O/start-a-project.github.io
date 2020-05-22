@@ -1,0 +1,79 @@
+.sidemenu {
+  display: none;
+}
+.sidemenu:checked + aside {
+  left: 0;
+}
+
+.sidemenu:checked ~ .t-s-w {
+  margin-left: 27rem;
+}
+
+aside {
+  position: absolute;
+  left: -25rem;
+  top: 0;
+  bottom: 0;
+  transition: 0.3s ease-out;
+  width: 25rem;
+  background-color: #e7e7e7;
+  z-index: 9;
+}
+
+
+
+
+
+
+.t-s-w {
+  margin-left: 20px;
+  transition: 0.3s ease-out;
+
+}
+label {
+  /*控制侧边栏进出的按钮*/
+  color: #fff;
+  cursor: pointer;
+  font-family: Courier New;
+  font-size: 5em;
+}
+
+a {
+  text-decoration: none;
+}
+/*以上为侧边导航栏*/
+/*下为导航栏宽高*/
+.nav {
+  height: 8rem;
+  width: 100%;
+}
+@media screen and (max-width:768px) {
+  .nav{height: 6rem;}
+}
+/*按钮默认*/
+.btn {
+  border: 0;
+}
+/* 手写箭头向右 */
+.arrow {
+  border: 0.5rem solid #e7e7e7;
+  border-left: 0;
+  border-bottom: 0;
+  width: 0;
+  margin: 0;
+  margin-right: 1rem;
+  padding: 1rem;
+  transform: rotate(45deg);
+}
+/* 倒三角 */
+.triangle-top {
+  display: inline-block;
+  border: 1rem solid #afbac0;
+  width: 0;
+  height: 0;
+  border-color: gray transparent transparent;
+}
+
+/* 向右三角 */
+
+

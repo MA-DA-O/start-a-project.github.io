@@ -1,0 +1,64 @@
+i {
+    display: inline-block;
+  background: url(../img/task7/任务13雪碧图.png) no-repeat;
+}
+/* .红十字  */
+.icon-1 {
+  height: 14px;
+  width: 14px;
+  background-position: 0 0;
+}
+/* .放大镜  */
+.icon-2 {
+  height: 21px;
+  width: 19px;
+  background-position: 0 -22px;
+}
+/* .瞄准  */
+.icon-3 {
+  height: 25px;
+  width: 26px;
+  background-position: -3px -55px;
+}
+/* .刀  */
+.icon-4 {
+  height: 17px;
+  width: 27px;
+  background-position: -29px -1px;
+}
+/* .圆圈叹号  */
+.icon-5 {
+  height: 40px;
+  width: 40px;
+  background-position: -40px -24px;
+}
+/* .声音  */
+.icon-6 {
+  height: 40px;
+  width: 40px;
+  background-position: -94px 0;
+}
+/* .设置  */
+.icon-7 {
+  height: 40px;
+  width: 40px;
+  background-position: -100px -53px;
+}
+/* .问题  */
+.icon-8 {
+  height: 42px;
+  width: 42px;
+  background-position: -157px 0;
+}
+/* .关于  */
+.icon-9 {
+  height: 42px;
+  width: 42px;
+  background-position: -159px -52px;
+}
+/* .房子  */
+.icon-10 {
+  height: 42px;
+  width: 51px;
+  background-position: -218px 0;
+}

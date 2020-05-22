@@ -1,0 +1,162 @@
+@charset "UTF-8";
+html, body {
+  background-color: #fafafa;
+}
+
+ul, li {
+  list-style: none;
+  padding: 0;
+}
+
+.border-left {
+  border-left: 2px dashed #dedede;
+}
+
+.slideshow {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.img-box {
+  width: 300%;
+  animation: slideshow 6s ease-out infinite;
+}
+
+.img-box > img {
+  display: inline-block;
+  width: 33.33%;
+  float: left;
+}
+
+@media screen and (min-width: 1300px) {
+  .slideshow {
+    height: 60rem;
+  }
+  .img-box > img {
+    height: 60rem;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .slideshow {
+    height: 40vw;
+  }
+  .head-wrap {
+    min-width: 50%;
+  }
+  .col-md-50 {
+    min-width: 50%;
+    margin: 5rem 0;
+  }
+  .mb12 {
+    margin-bottom: 5rem !important;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .icon-wrap-1 {
+    min-width: 100%;
+  }
+  .border-left {
+    border-left: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .border-left {
+    border-left: none;
+  }
+}
+
+@media screen and (max-width: 400px) and (max-width: 400px) {
+  .slideshow {
+    height: 80vw;
+  }
+  .slideshow .img-box {
+    height: 80vw;
+  }
+  .slideshow .img-box > img {
+    height: 80vw;
+  }
+}
+
+.focus-container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  z-index: 7;
+  margin: 0 auto;
+  left: 50%;
+  margin-left: -6rem;
+  width: 12rem;
+}
+
+.focus-container li {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  float: left;
+  margin: 0 1rem;
+  background: #fff;
+}
+
+.focus-item {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  animation: fade linear infinite;
+}
+
+.focus-item2,
+.focus-item3 {
+  opacity: 0;
+}
+
+.focus-container ul {
+  display: flex;
+  justify-content: center;
+}
+
+/*设置轮播焦点的位置*/
+.focus-container {
+  bottom: 2%;
+}
+
+/*设置当前图片焦点的颜色*/
+.focus-item {
+  background: #29b078;
+}
+
+/*设置动画，请根据实际需要修改秒数*/
+.focus-item {
+  animation-duration: 6s;
+}
+
+.focus-item1 {
+  animation-delay: 0s;
+}
+
+.focus-item2 {
+  animation-delay: 2s;
+}
+
+.focus-item3 {
+  animation-delay: 4s;
+}
+
+/* 关于如何设置时间间隔 */
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

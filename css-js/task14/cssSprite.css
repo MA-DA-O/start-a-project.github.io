@@ -1,0 +1,165 @@
+i {
+  display: inline-block;
+  background: url(../img/task14/任务14雪碧图.png) no-repeat;
+}
+
+/* .人头像 */
+.icon-0 {
+  height: 13px;
+  width: 13px;
+  background-position: 0 0;
+}
+
+/* .星星 */
+.icon-1 {
+  height: 15px;
+  width: 16px;
+  background-position: 0 -13px;
+}
+
+/* .微博图标 */
+.icon-2 {
+  height: 24px;
+  width: 25px;
+  background-position: 0 -28px;
+}
+
+/* .qq图标 */
+.icon-3 {
+  height: 24px;
+  width: 25px;
+  background-position: 0 -52px;
+}
+
+/* .微信图 */
+.icon-4 {
+  height: 24px;
+  width: 25px;
+  background-position: 0 -76px;
+  margin: 0.5rem 1rem;
+}
+
+/* .右箭头白底绿色 */
+.icon-5 {
+  height: 30px;
+  width: 32px;
+  background-position: 0 -100px;
+}
+
+/* .火箭 */
+.icon-6 {
+  height: 62px;
+  width: 43px;
+  background-position: 0 -130px;
+}
+
+/* .人脉 */
+.icon-7 {
+  height: 55px;
+  width: 52px;
+  background-position: 0 -192px;
+}
+
+/* .书本 */
+.icon-8 {
+  height: 48px;
+  width: 60px;
+  background-position: 0 -247px;
+}
+
+/* .二维码 */
+.icon-9 {
+  margin-top: 1re;
+  height: 92px;
+  width: 92px;
+  background-position: 0 -295px;
+}
+
+/* .www.jnshu.com */
+.icon-10 {
+  margin: 2.5rem 0;
+  height: 49px;
+  width: 107px;
+  background-position: 0 -387px;
+}
+
+/* .左二女 */
+.icon-11 {
+  height: 108px;
+  width: 108px;
+  background-position: 0 -436px;
+}
+
+/* .左一男 */
+.icon-12 {
+  height: 108px;
+  width: 108px;
+  background-position: 0 -544px;
+}
+
+/* .左四男 */
+.icon-13 {
+  height: 108px;
+  width: 108px;
+  background-position: 0 -652px;
+}
+
+/* .左三女 */
+.icon-14 {
+  height: 108px;
+  width: 108px;
+  background-position: 0 -760px;
+}
+
+/* .七牛云储存 */
+.icon-15 {
+  height: 124px;
+  width: 124px;
+  background-position: 0 -868px;
+}
+
+/* .环信 */
+.icon-16 {
+  height: 69px;
+  width: 134px;
+  background-position: 0 -992px;
+}
+
+/* .图层2 */
+.icon-17 {
+  height: 139px;
+  width: 139px;
+  background-position: 0 -1061px;
+  margin: 1rem;
+}
+
+/* .alibaba */
+.icon-18 {
+  height: 184px;
+  width: 184px;
+  background-position: 0 -1200px;
+}
+
+/* .容联云通讯 */
+.icon-19 {
+  height: 191px;
+  width: 191px;
+  background-position: 0 -1384px;
+}
+
+/* .土豆网 */
+.icon-20 {
+  height: 177px;
+  width: 230px;
+  background-position: 0 -1575px;
+  display: flex;
+  flex-shrink: 0;
+  border-top-left-radius: 5px;
+}
+
+/* .金山云 */
+.icon-21 {
+  height: 137px;
+  width: 237px;
+  background-position: 0 -1752px;
+}

@@ -1,0 +1,113 @@
+$blue: #29bde0;
+$gray: #b9e9f5;
+$orange: #f5c97b;
+$green: #83b09a;
+$darkorange: #fbb435;
+$white: #fff;
+
+html {
+  background-color: #29bde0;
+  @media screen and (max-width: 768px) {
+    font-size: 50%;
+  }
+}
+
+.bd-w {
+  height: 2.2rem;
+  border: 0.1rem solid #fff;
+}
+.sidemenu:checked ~ html {
+  margin-left: 50rem;
+}
+
+audio {
+  position: absolute;
+  transform: rotate(180deg);
+  width: 10rem;
+  right: 1rem;
+  opacity: 0;
+}
+img {
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem;
+}
+.m-t1 {
+  background-color: $gray;
+}
+.m-t-p {
+  margin-left: 3rem;
+}
+.m-t2 {
+  > .triangle-top {
+    border-color: $gray transparent transparent;
+    margin-left: 4rem;
+  }
+}
+main {
+  display: flex;
+  flex-flow: wrap; overflow: auto;
+  height: 71rem;
+}
+.main-box {
+  width: 33vw;
+  height: 33vw;
+  .show {
+    margin: auto;
+    width: 26vw;
+    height: 24vw;
+    border: 0.25rem solid white;
+    p {
+      font-size: 1.5rem;
+      height: 75%;
+      margin: 0;
+      width: 100%;
+    }
+    div {
+      height: 25%;
+      background-color: #83b09a;
+      font-size: 1.1rem;
+      width: 100%;
+    }
+    &:hover ~ .hidden-icon {
+      display: flex;
+    }
+  }
+  .hidden-icon {
+    display: none;
+  }
+
+  .hidden-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    margin: 0.5vw;
+    height: 5vw;
+    width: 5vw;
+    @media screen and (max-width: 500px) {
+      height: 7vw;
+      width: 7vw;
+    }
+  }
+}
+.foot-blank {
+  width: 100%;
+  height: 9.5rem;
+}
+.f-t {
+  width: 100%;
+  height: 9.5rem;
+  a {
+    width: 80%;
+    height: 6rem;
+    button {
+      width: 100%;
+      height: 6rem;
+      font-size: 2rem;
+    }
+    button:hover {
+      background-color: #f5c97b;
+    }
+  }
+}

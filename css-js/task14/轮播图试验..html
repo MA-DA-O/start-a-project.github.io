@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>试验
+	</title>
+
+	<style>
+		html {
+			background-color: yellow;
+		}
+
+		#container1 {
+			width: 100%;
+			height: 300px;
+			overflow: hidden;
+		}
+
+		#photo {
+			width: 300%;
+			animation: switch 5s ease infinite;
+		}
+
+		#photo>img {
+			float: left;
+			width: 33.33%;
+			height: 300px;
+		}
+
+		@keyframes switch {
+
+			0%,
+			25% {
+				margin-left: 0;
+			}
+
+			35%,
+			60% {
+				margin-left: -100%;
+			}
+
+			70%,
+			100% {
+				margin-left: -200%;
+			}
+
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul,
+		li {
+			list-style: none;
+		}
+
+		/*css reset end*/
+
+		/*css public start*/
+		.floatfix {
+			*zoom: 1;
+		}
+
+		.floatfix:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+
+		/*css public end*/
+
+		/*slider start*/
+		.slider-contaner {
+			width: 100%;
+			position: relative;
+		}
+
+		.slider-item+.slider-item {
+			opacity: 0;
+		}
+
+		.slider-item {
+			width: 100%;
+			position: absolute;
+			animation: fade linear infinite;
+			background-size: 100%;
+		}
+
+		.focus-container {
+			position: absolute;
+			z-index: 7;
+			margin: 0 auto;
+			left: 0;
+			right: 0;
+		}
+
+		.focus-container li {
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			float: left;
+			margin-right: 10px;
+			background: #fff;
+		}
+
+		.focus-item {
+			width: 100%;
+			height: 100%;
+			border-radius: inherit;
+			animation-timing-function: linear;
+			animation-name: fade;
+			animation-iteration-count: infinite;
+		}
+
+		.focus-item2,
+		.focus-item3 {
+			opacity: 0;
+		}
+
+
+		.focus-container ul {
+			margin-left: 46%;
+		}
+
+		/*设置轮播焦点的位置*/
+		.focus-container {
+			bottom: 2%;
+		}
+
+		/*设置当前图片焦点的颜色*/
+		.focus-item {
+			background: #51B1D9;
+		}
+
+		/*设置动画，请根据实际需要修改秒数*/
+	
+		.focus-item {
+			animation-duration: 5s;
+		}
+
+		.focus-item1 {
+			animation-delay:0s;
+		}
+
+		.focus-item2 {
+			animation-delay: 1.66s;
+		}
+
+		.focus-item3 {
+			animation-delay:3.32s;
+
+		}
+		/* 关于如何设置时间间隔 */
+		@keyframes fade {
+			0% {
+				opacity: 1;
+			}
+			25%{opacity: 1;}
+			33%{opacity: 0;}
+			100%{
+				opacity: 0;
+			}
+		}
+
+		/*设置背景，响应式请利用媒体查询根据断点修改路径*/
+		/* 此处背景图片删除 */
+		/*设置图片的高度，请根据具体需要修改百分比，响应式及时修改此值*/
+		.slider,
+		.slider-item {
+			padding-bottom: 40%;
+		}
+
+		/* 使用padding、可以达到高度自适应，而height就不行。 */
+	</style>
+</head>
+
+<body>
+	<div id="container1">
+		<div id="photo">
+			<img src="../img/轮播图试验3.png" />
+			<img src="../img/轮播图试验2.png" />
+			<img src="../img/task12-2雪碧大版.png" />
+		</div>
+	</div>
+
+
+
+		<div class="focus-container">
+			<ul class="floatfix">
+				<li>
+					<div class="focus-item focus-item1"></div>
+				</li>
+				<li>
+					<div class="focus-item focus-item2"></div>
+				</li>
+				<li>
+					<div class="focus-item focus-item3"></div>
+				</li>
+
+			</ul>
+		</div>
+
+
+</body>
+
+</html>

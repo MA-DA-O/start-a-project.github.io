@@ -1,0 +1,229 @@
+@charset "UTF-8";
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: 0;
+  outline: medium;
+}
+
+main {
+  width: 95%;
+  margin: 2rem auto;
+  height: 72vh;
+  overflow: scroll;
+}
+
+span {
+  height: 1.1rem;
+  width: 1.1rem;
+  border-top: 0.3rem solid #29bde0;
+  border-right: 0.3rem solid #29bde0;
+  transform: rotate(135deg);
+  padding-right: 0.1rem;
+  margin-left: 1rem;
+  display: block;
+  position: absolute;
+  right: 15px;
+  top: 13px;
+}
+
+.m-box {
+  width: 100%;
+  background: #fff;
+}
+
+.m-b-top {
+  position: relative;
+  width: 100%;
+  height: 4.5rem;
+  border: 1px solid #e6e6e6;
+  border-bottom: 0;
+}
+
+.m-b-top p {
+  font-size: 2rem;
+  color: #29bde0;
+}
+
+.m-b-bottom {
+  display: flex;
+  height: 50vh;
+  overflow: hidden;
+  border: 1px solid #e6e6e6;
+}
+
+.m-b-b-left {
+  width: 8%;
+  height: 50vh;
+  border-right: 1px solid #e6e6e6;
+  position: relative;
+}
+
+.m-b-b-left .img1 {
+  position: absolute;
+  background: #fff;
+  width: 60px;
+  height: 60px;
+  background-image: url(../img/js2-4/太阳图片.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  top: 15%;
+  left: 15%;
+}
+
+.m-b-b-left .img2 {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  background: #fff;
+  background-image: url(../img/js2-4/月亮图片.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  top: 55%;
+  left: 15%;
+}
+
+.m-b-b-right {
+  width: 92%;
+  height: 50vh;
+}
+
+.row {
+  width: 70%;
+  margin: 2rem auto 0;
+  display: flex;
+  align-items: center;
+}
+
+.triangle {
+  height: 0;
+  border: solid transparent;
+  border-right-color: #24a7c6;
+  border-width: 1rem;
+}
+
+.record {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.btn-discuss {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 88%;
+  height: 6rem;
+  background: #24a7c6;
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.hidden-all {
+  display: none;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background: black;
+}
+
+.hidden-box {
+  display: none;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-left: -40%;
+  border-radius: 10px;
+  background-color: #fff;
+  flex-flow: column;
+  justify-content: space-between;
+  width: 80%;
+  height: 10rem;
+  z-index: 999;
+}
+
+.hidden-box-p-wrap {
+  display: flex;
+  justify-content: center;
+  height: 18rem;
+  align-items: center;
+}
+
+.hidden-box-p {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #29bde0;
+  margin: 0 1rem;
+  display: fl;
+  align-content: center;
+}
+
+.hidden-btn-wrap {
+  border-top: 1px solid #e6e6ee;
+  display: flex;
+  background: #fff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.hidden-btn-left {
+  width: 50%;
+  max-width: 100%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-size: 3rem;
+  color: #e6e6e6;
+  background: white;
+  font-weight: 500;
+  border: 0;
+  border-right: 1px solid #e6e6e6;
+  outline: medium;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.hidden-btn-right {
+  width: 50%;
+  max-width: 100%;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-size: 3rem;
+  color: #e6e6e6;
+  background: white;
+  font-weight: 500;
+  border: 0;
+  outline: medium;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.foot-btn-wrap {
+  width: 100%;
+  height: 15vh;
+  background: #24a7c6;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.game-over, .game-log {
+  width: 40%;
+  height: 7vh;
+  background: red;
+  border-radius: 10px;
+}
+
+.game-log {
+  background: #ffa500;
+}

@@ -1,0 +1,99 @@
+$gray: #d0d6d9;
+$darkgray: #999999;
+$lighgray: #edf1f2;
+$green: #29b078;
+$white: #fff;
+html {
+  background-color: #fafafa;
+}
+
+%center-p {
+  display: flex;
+  align-items: center;
+}
+
+// 首页职业字体行
+.main-homepage-p {
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: 3rem 0;
+  border-bottom: 1px solid $gray;
+  span {
+    font-size: 1.8rem;
+    color: $green;
+  }
+}
+// 开发行
+.main-dirction {
+  border-bottom: 1px solid $lighgray;
+  height: 6rem;
+  
+  @extend %center-p;
+  .direcsiton-p1-wrap {
+    @extend %center-p;
+    .p1 {
+      width: 4.2rem;
+      font-size: 1.4rem;
+      color: $darkgray;
+    }
+  }
+  .direcsiton-p2-wrap {
+
+    @extend %center-p;
+    flex-flow: wrap;
+    
+    .p2 {
+      margin-left: 3.5rem;
+      font-size: 1.4rem;
+      color: black;
+      cursor: pointer;
+      width: 7rem;
+      text-align: center;
+      &:hover {
+        background-color: $green;
+        color: $white;
+      }
+    }
+    .p2-1{
+      width: 4rem;
+    }
+  }
+}
+// 下为开发方向行
+.exploit {
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-bottom: 1px solid $gray;
+  margin-bottom: 5rem;
+}
+.border-right0 {
+  border-right: 0;
+}
+.wd100 {
+  width: 100%;
+}
+.wd40 {
+  width: 40%;
+}
+.wd33 {
+  max-width: 33%;
+}
+@media screen and (max-width: 1000px) {
+  .w-100 {
+    width: 0 !important;
+  }
+}
+@media screen and (max-width: 720px) {
+  .main-dirction{height: auto;}
+  .main-dirction .direcsiton-p2-wrap .p2{
+    margin: 1rem 0 1rem 2rem;
+  }
+}
+@media screen and (max-width: 350px) {
+  .main-dirction .direcsiton-p2-wrap .p2{
+    margin:1rem 0 1rem 1rem;
+  }
+}
