@@ -153,6 +153,7 @@ btnBox.click(function() {
 console.log(KillSelect)
 $(".foot-btn").click(function() {
     // 如果进入杀手页面，点击杀手，跳弹框且不跳转。
+
     if (KillSelect == 1) {
         // 如果点击杀手弹框提示
         if (arr[thisBox]["name"] == "杀手") {

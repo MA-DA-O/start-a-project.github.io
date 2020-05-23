@@ -62,7 +62,7 @@ var days = 1;
 if (sessionStorage.getItem("days")) {
     days = JSON.parse(sessionStorage.getItem("days"));
 }
-if (click !== 0 && click % 2 == 0) {
+if (click !== 0 && click % 4 == 0) {
     days++
 }
 

@@ -26,13 +26,13 @@ var array;
 // 然后关联onchange，使两个数字关联。
 inputText.onchange = function() {
     // 如果text的数字在规则内，则 range的值 为 text 的值，也就是text动态改变range。
-    if (inputText.value > 3 && inputText.value < 19) {
+    if (inputText.value >= 4 && inputText.value <= 18) {
         inputRange.value = inputText.value;
     }
     // 否则跳出弹框，提示输入人数不对。
     else {
         inputText.value == 4;
-        $(".hidden-box-p").html('请输入正确的玩家数量。')
+        $(".hidden-box-p").html("请输入正确的玩家数量。");
         hiddenAll[0].style.display = "block";
         hiddenBox[0].style.display = "flex";
     }
@@ -42,7 +42,7 @@ inputRange.oninput = function() {
     inputText.value = inputRange.value;
 };
 if (inputText == null) {
-    inputText == 4
+    inputText == 4;
 }
 // 获取加减两个按钮的dom节点，然后关联加减两个按钮，增加或减少range 的值。
 var reduce = document.getElementById("reduce");
@@ -50,28 +50,28 @@ var incerase = document.getElementById("increase");
 // 减号设定最小减到4
 reduce.onclick = function() {
     inputRange.value--;
-    if (inputText.value > 4) {
-        inputText.value--;
-    }
-    if (inputText.value == 4) {
-        $(".hidden-box-p").html('玩家数量应该在4到18之间。')
+    if (inputText.value <= 4) {
+        $(".hidden-box-p").html("玩家数量应该在4到18之间。");
         hiddenAll[0].style.display = "block";
         hiddenBox[0].style.display = "flex";
+
+    } else {
+        inputText.value = inputRange.value;
     }
 };
 // 加号最大加到18
 incerase.onclick = function() {
     inputRange.value++;
-    if (inputText.value < 18) {
-        inputText.value++;
-    }
-    if (inputText.value == 18) {
-        $(".hidden-box-p").html('玩家数量应该在4到18之间。')
+    if (inputText.value >= 18) {
+        $(".hidden-box-p").html("玩家数量应该在4到18之间。");
         hiddenAll[0].style.display = "block";
         hiddenBox[0].style.display = "flex";
+
+    } else {
+        inputText.value = inputRange.value
+
     }
 };
-
 
 // 这个是照搬的，没理解原理。
 // 改变滑块经过后的颜色
@@ -93,8 +93,8 @@ var btnSet = document.getElementsByClassName("set");
 // 根据滑块实时的数量进行改变人数分配
 btnSet[0].onclick = function aaa() {
     // 点击清除sessionstorange
-    sessionStorage.clear()
-        // 每次点击i获取滑块的数值
+    sessionStorage.clear();
+    // 每次点击i获取滑块的数值
     var i = document.getElementById("range").value;
     // 现获取大盒子的节点,小盒子节点
     var box = document.getElementsByClassName("m-t-r-t");
@@ -156,12 +156,11 @@ btnSet[0].onclick = function aaa() {
         }
 
         for (let a = killers; a > 0; a--) {
-            arr.push("杀手")
+            arr.push("杀手");
         }
         for (let b = i - killers; b > 0; b--) {
-            arr.push("平民")
+            arr.push("平民");
         }
-
     }
 
     // 打乱数组 洗牌算法
@@ -182,8 +181,6 @@ btnSet[0].onclick = function aaa() {
     // 使用算法打乱数组排列
     shuffle();
 
-
-
     // 转化数组为对象数组
     var playerObj = [];
     // 赋予数组元素名称，编号，存活状态
@@ -192,21 +189,19 @@ btnSet[0].onclick = function aaa() {
             name: arr[i],
             state: "alive",
             number: i,
-        })
-    };
+        });
+    }
     sessionStorage.setItem("arr", JSON.stringify(playerObj));
     console.log(playerObj);
-    asa = arr
+    asa = arr;
 };
 // 随便起个变量名引出arr
 var asa;
-
 
 // 获取dom节点按钮发牌
 var btnDeal = document.getElementById("deal");
 // 发牌按钮点击时，触发前往下一页
 btnDeal.onclick = function inputValue() {
-
     if (asa == undefined) {
         hiddenAll[0].style.display = "block";
         hiddenBox[0].style.display = "flex";
