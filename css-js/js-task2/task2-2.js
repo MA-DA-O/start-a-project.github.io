@@ -31,7 +31,8 @@ inputText.onchange = function() {
     }
     // 否则跳出弹框，提示输入人数不对。
     else {
-        inputText.value = null;
+        inputText.value == 4;
+        $(".hidden-box-p").html('请输入正确的玩家数量。')
         hiddenAll[0].style.display = "block";
         hiddenBox[0].style.display = "flex";
     }
@@ -40,7 +41,9 @@ inputText.onchange = function() {
 inputRange.oninput = function() {
     inputText.value = inputRange.value;
 };
-
+if (inputText == null) {
+    inputText == 4
+}
 // 获取加减两个按钮的dom节点，然后关联加减两个按钮，增加或减少range 的值。
 var reduce = document.getElementById("reduce");
 var incerase = document.getElementById("increase");
@@ -50,12 +53,22 @@ reduce.onclick = function() {
     if (inputText.value > 4) {
         inputText.value--;
     }
+    if (inputText.value == 4) {
+        $(".hidden-box-p").html('玩家数量应该在4到18之间。')
+        hiddenAll[0].style.display = "block";
+        hiddenBox[0].style.display = "flex";
+    }
 };
 // 加号最大加到18
 incerase.onclick = function() {
     inputRange.value++;
     if (inputText.value < 18) {
         inputText.value++;
+    }
+    if (inputText.value == 18) {
+        $(".hidden-box-p").html('玩家数量应该在4到18之间。')
+        hiddenAll[0].style.display = "block";
+        hiddenBox[0].style.display = "flex";
     }
 };
 
@@ -100,13 +113,11 @@ btnSet[0].onclick = function aaa() {
     if (i > 3 && i < 19) {
         // 设定杀手和平民的计算方式
         var killers, mans;
-        if (i == 8) {
-            killers = 1;
-        } else {
-            killers = Math.floor(i / 4);
-        }
+
+        killers = Math.floor(i / 3);
+
         mans = i - killers;
-        // 设定杀手， 若大于零则自减以来产生杀死数量
+        // 设定杀手， 若大于零则自减以来产生数量文本
         for (let a = killers; a > 0; a--) {
             var box = document.getElementsByClassName("m-t-r-t");
             var killerDiv = document.createElement("div");

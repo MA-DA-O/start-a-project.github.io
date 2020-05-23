@@ -1,0 +1,52 @@
+html,
+body {
+    margin: 0;
+}
+
+.bg-img {
+    background: url(../img/js-task5/js-task5背景图.jpg) no-repeat center;
+    background-size: cover;
+    overflow: hidden;
+    height: 100vh;
+    min-height: 468px;
+    display: flex;
+    justify-content: center;
+}
+
+.input-wrap {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: #f1f0f0;
+    border-radius: 10px;
+    margin-top: 130px;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 65px 0 0;
+    background: #f1f0f0;
+}
+
+input[type=text] {}
+
+.top-img {
+    background: url(../img/js-task5/任务5萝卜.png) no-repeat center;
+    background-size: 70px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    position: absolute;
+    top: -32px;
+    left: 90px;
+}
+
+.user-img {
+    background-image: url(../img/js-task5/任务5人头.png);
+}
+
+.password-img {
+    background-image: url(../img/js-task5/任务5锁头.png);
+}

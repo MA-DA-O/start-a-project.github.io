@@ -1,4 +1,14 @@
+body {
+  position: relative;
+}
+
+main {
+  overflow: scroll;
+  height: 72vh;
+}
+
 .audio-wrap {
+  position: fixed;
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
@@ -6,6 +16,10 @@
   width: 100%;
   margin: 0;
   background-color: #b9e9f5;
+}
+
+.audio-wrap-blank {
+  height: 4rem;
 }
 
 .row-text {

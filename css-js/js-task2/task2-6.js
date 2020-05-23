@@ -2,6 +2,10 @@
 var arr = JSON.parse(sessionStorage.getItem("arr"));
 var click = JSON.parse(sessionStorage.getItem("click"));
 var days = JSON.parse(sessionStorage.getItem("days"));
+if (days == null) {
+    days = 1
+}
+console.log(days)
 sessionStorage.setItem("days", JSON.stringify(days));
 sessionStorage.setItem("arr", JSON.stringify(arr));
 
@@ -128,15 +132,19 @@ btnBox.click(function() {
     }
     // 点击时子级变色
     $(".show-ID").eq($(this).index()).css("background", "red");
-    // 如果判断是杀手进入页面，不可点击杀手，不可变色，跳出弹框。且废弃该按钮。 
+    // 如果判断是杀手进入页面，点击杀手弹框，不可变色，跳出弹框。废弃该按钮。 
     if (KillSelect != 0) {
         if (arr[thisBox]["name"] == "杀手") {
 
             hiddenAll[0].style.display = "block";
             hiddenBox[0].style.display = "flex";
             $(".show-ID").eq(thisBox).css("background", "#f5c97b");
+            // 判断若该杀手处于死亡则依然红色
+            for (let i = 0; i < deathMan.length; i++) {
+                $(".show-ID").eq(deathMan[i]).css("background", "red");
+            }
             $(".hidden-box-p").html("别激动，自己人");
-            $(this).attr("disabled", true);
+
         }
     }
     //
@@ -146,14 +154,14 @@ console.log(KillSelect)
 $(".foot-btn").click(function() {
     // 如果进入杀手页面，点击杀手，跳弹框且不跳转。
     if (KillSelect == 1) {
+        // 如果点击杀手弹框提示
         if (arr[thisBox]["name"] == "杀手") {
             hiddenAll[0].style.display = "block";
             hiddenBox[0].style.display = "flex";
-            $(".show-ID").eq(thisBox).css("background", "#f5c97b");
             $(".hidden-box-p").html("请选择一个杀死");
         } else {
             if (deathMan.length == 0) {
-                // 第一次
+                // 第一次进入杀人页面
                 arr[thisBox]["state"] = "die";
                 deathMan.push(thisBox);
                 // 储存变更数组，更名以免冲突。
@@ -161,21 +169,38 @@ $(".foot-btn").click(function() {
                 location.href = "task2-5.html";
                 sessionStorage.setItem("deathMan", JSON.stringify(deathMan));
             } else {
-                arrChange[thisBox]["state"] = "die";
-                sessionStorage.setItem("arrChange", JSON.stringify(arrChange));
-                // 把该下标存入死亡数组，方便回头继续改变颜色。
-                deathMan.push(thisBox);
-                location.href = "task2-5.html";
-                sessionStorage.setItem("deathMan", JSON.stringify(deathMan));
+                // 死者不可选
+                if (arrChange[thisBox]["state"] == "die") {
+                    hiddenAll[0].style.display = "block";
+                    hiddenBox[0].style.display = "flex";
+                    $(".hidden-box-p").html("请选择一个杀死");
+                } else {
+                    arrChange[thisBox]["state"] = "die";
+                    sessionStorage.setItem("arrChange", JSON.stringify(arrChange));
+                    // 把该下标存入死亡数组，方便回头继续改变颜色。
+                    deathMan.push(thisBox);
+                    location.href = "task2-5.html";
+                    sessionStorage.setItem("deathMan", JSON.stringify(deathMan));
+                }
             }
         }
-    } else { //若没进入杀手页面，则没有限制。
-        arrChange[thisBox]["state"] = "die";
-        sessionStorage.setItem("arrChange", JSON.stringify(arrChange));
-        deathMan.push(thisBox);
-        location.href = "task2-5.html";
-        sessionStorage.setItem("deathMan", JSON.stringify(deathMan));
     }
+    // 若不是杀手进入界面
+    else {
+        if (arrChange[thisBox]["state"] == "die") {
+            hiddenAll[0].style.display = "block";
+            hiddenBox[0].style.display = "flex";
+            $(".hidden-box-p").html("请选择一个杀死");
+        } else {
+            arrChange[thisBox]["state"] = "die";
+            sessionStorage.setItem("arrChange", JSON.stringify(arrChange));
+            deathMan.push(thisBox);
+            location.href = "task2-5.html";
+            sessionStorage.setItem("deathMan", JSON.stringify(deathMan));
+        }
+    }
+
+
     if (deathMan.length > 0) {
         let alive = arrChange.filter(function(item) {
             return (item.state == "alive")
@@ -200,7 +225,7 @@ $(".foot-btn").click(function() {
                 // 跳转平民胜利页面
         }
         console.log(alive)
-        console, log(killerAlive)
+        console.log(killerAlive)
         console.log(manAlive)
     }
 });
