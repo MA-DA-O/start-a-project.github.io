@@ -46,7 +46,7 @@ for (let i = 0; i < days; i++) {
     $(".row-bottom").eq(i).append('<p class="row-text-bottom"></p>');
     $(".row-text-left").eq(i).html('第' + (i + 1) + '天')
     $(".row-text-bottom").eq(i * 2).html('晚上：' + (deathMan[i * 2] + 1) + '号被杀手杀死，' + (deathMan[i * 2] + 1) + '号是' + (arr[deathMan[i * 2]]["name"]))
-    $(".row-text-bottom").eq(i * 2 + 1).html('白天：' + (deathMan[i * 2 + 1] + 1) + '号被全民投死，' + (deathMan[i + 1] + 1) + '号是' + (arr[deathMan[i * 2 + 1]]["name"]))
+    $(".row-text-bottom").eq(i * 2 + 1).html('白天：' + (deathMan[i * 2 + 1] + 1) + '号被全民投死，' + (deathMan[i * 2 + 1] + 1) + '号是' + (arr[deathMan[i * 2 + 1]]["name"]))
 }
 // 根据胜利变量进行分辨是哪组胜利
 

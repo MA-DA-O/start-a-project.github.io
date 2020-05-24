@@ -15,22 +15,42 @@ body {
 
 .input-wrap {
     position: relative;
-    width: 250px;
+    width: 50%;
     height: 250px;
     background: #f1f0f0;
     border-radius: 10px;
     margin-top: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .input-box {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 65px 0 0;
-    background: #f1f0f0;
+    width: 76%;
+    height: 25px;
+    margin: 10px 0;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
 }
 
-input[type=text] {}
+input[type=text] {
+    outline: none;
+    border: 0;
+    height: 22px;
+    width: 100%;
+}
+
+input[type=password] {
+    outline: none;
+    border: 0;
+    height: 22px;
+    width: 100%;
+}
 
 .top-img {
     background: url(../img/js-task5/任务5萝卜.png) no-repeat center;
@@ -40,13 +60,27 @@ input[type=text] {}
     border-radius: 50%;
     position: absolute;
     top: -32px;
-    left: 90px;
 }
 
 .user-img {
-    background-image: url(../img/js-task5/任务5人头.png);
+    background: url(../img/js-task5/任务5人头.png) no-repeat center;
+    background-size: 15px;
+    width: 35px;
+    height: 18px;
 }
 
 .password-img {
-    background-image: url(../img/js-task5/任务5锁头.png);
+    background: url(../img/js-task5/任务5锁头.png)no-repeat center;
+    background-size: 15px;
+    width: 35px;
+    height: 18px;
+}
+
+button {
+    height: 40px;
+    width: 76%;
+    background: orange;
+    border-radius: 5px;
+    margin: 10px 0 0;
+    outline: none;
 }
