@@ -150,10 +150,11 @@ btnBox.click(function() {
     //
 });
 // 确定按钮点击事件
+
 console.log(KillSelect)
+
 $(".foot-btn").click(function() {
     // 如果进入杀手页面，点击杀手，跳弹框且不跳转。
-
     if (KillSelect == 1) {
         // 如果点击杀手弹框提示
         if (arr[thisBox]["name"] == "杀手") {
@@ -200,8 +201,6 @@ $(".foot-btn").click(function() {
             sessionStorage.setItem("deathMan", JSON.stringify(deathMan));
         }
     }
-
-
     if (deathMan.length > 0) {
         let alive = arrChange.filter(function(item) {
             return (item.state == "alive")

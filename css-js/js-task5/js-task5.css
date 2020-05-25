@@ -1,87 +1,86 @@
-@charset "UTF-8";
 html,
 body {
-  margin: 0;
+    margin: 0;
 }
 
 .bg-img {
-  background: url(../img/js-task5/js-task5背景图.jpg) no-repeat center;
-  background-size: cover;
-  overflow: hidden;
-  height: 100vh;
-  min-height: 468px;
-  display: flex;
-  justify-content: center;
+    background: url(js-task5/bg-img.jpg) no-repeat center;
+    background-size: cover;
+    overflow: hidden;
+    height: 100vh;
+    min-height: 468px;
+    display: flex;
+    justify-content: center;
 }
 
 .input-wrap {
-  position: relative;
-  width: 50%;
-  height: 250px;
-  background: #f1f0f0;
-  border-radius: 10px;
-  margin-top: 130px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    position: relative;
+    width: 50%;
+    height: 250px;
+    background: #f1f0f0;
+    border-radius: 10px;
+    margin-top: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .input-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 76%;
-  height: 25px;
-  margin: 10px 0;
-  background: #fff;
-  border: 1px solid #e6e6e6;
-  border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 76%;
+    height: 25px;
+    margin: 10px 0;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
 }
 
 input[type=text] {
-  outline: none;
-  border: 0;
-  height: 22px;
-  width: 100%;
+    outline: none;
+    border: 0;
+    height: 22px;
+    width: 100%;
 }
 
 input[type=password] {
-  outline: none;
-  border: 0;
-  height: 22px;
-  width: 100%;
+    outline: none;
+    border: 0;
+    height: 22px;
+    width: 100%;
 }
 
 .top-img {
-  background: url(../img/js-task5/任务5萝卜.png) no-repeat center;
-  background-size: 70px;
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  position: absolute;
-  top: -32px;
+    background: url(js-task5/top-icon.png) no-repeat center;
+    background-size: 70px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    position: absolute;
+    top: -32px;
 }
 
 .user-img {
-  background: url(../img/js-task5/任务5人头.png) no-repeat center;
-  background-size: 15px;
-  width: 35px;
-  height: 18px;
+    background: url(js-task5/id-icon.png) no-repeat center;
+    background-size: 15px;
+    width: 35px;
+    height: 18px;
 }
 
 .password-img {
-  background: url(../img/js-task5/任务5锁头.png) no-repeat center;
-  background-size: 15px;
-  width: 35px;
-  height: 18px;
+    background: url(js-task5/pass-icom.png) no-repeat center;
+    background-size: 15px;
+    width: 35px;
+    height: 18px;
 }
 
 button {
-  height: 40px;
-  width: 76%;
-  background: orange;
-  border-radius: 5px;
-  margin: 10px 0 0;
-  outline: none;
+    height: 40px;
+    width: 76%;
+    background: orange;
+    border-radius: 5px;
+    margin: 10px 0 0;
+    outline: none;
 }
