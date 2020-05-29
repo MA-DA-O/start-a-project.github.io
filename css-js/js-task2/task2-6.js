@@ -152,6 +152,32 @@ btnBox.click(function() {
 // 确定按钮点击事件
 
 console.log(KillSelect)
+    // 判断胜利函数方法
+function winner() {
+    let alive = arrChange.filter(function(item) {
+        return (item.state == "alive")
+    });
+    let killerAlive = alive.filter(function(item) {
+        return (item.name == '杀手')
+    });
+    let manAlive = alive.filter(function(item) {
+        return (item.name == '平民')
+    });
+    if (killerAlive.length >= manAlive.length) {
+        let killWin = 0;
+        killWin++
+        sessionStorage.setItem("killWin", JSON.stringify(killWin));
+        location.href = "task2-7.html"
+            // 跳转杀手胜利页面，生成一个胜利变量，储存，让胜利页面读取，若为几则谁赢。
+    } else if (killerAlive.length == 0) {
+        let manWin = 0
+        manWin++
+        sessionStorage.setItem("manWin", JSON.stringify(manWin));
+        location.href = "task2-7.html"
+            // 跳转平民胜利页面
+    }
+}
+
 
 $(".foot-btn").click(function() {
     // 如果进入杀手页面，点击杀手，跳弹框且不跳转。
@@ -202,30 +228,10 @@ $(".foot-btn").click(function() {
         }
     }
     if (deathMan.length > 0) {
-        let alive = arrChange.filter(function(item) {
-            return (item.state == "alive")
-        });
-        let killerAlive = alive.filter(function(item) {
-            return (item.name == '杀手')
-        });
-        let manAlive = alive.filter(function(item) {
-            return (item.name == '平民')
-        });
-        if (killerAlive.length >= manAlive.length) {
-            let killWin = 0;
-            killWin++
-            sessionStorage.setItem("killWin", JSON.stringify(killWin));
-            location.href = "task2-7.html"
-                // 跳转杀手胜利页面，生成一个胜利变量，储存，让胜利页面读取，若为几则谁赢。
-        } else if (killerAlive.length == 0) {
-            let manWin = 0
-            manWin++
-            sessionStorage.setItem("manWin", JSON.stringify(manWin));
-            location.href = "task2-7.html"
-                // 跳转平民胜利页面
-        }
-        console.log(alive)
-        console.log(killerAlive)
-        console.log(manAlive)
+        winner()
     }
+    console.log(alive)
+    console.log(killerAlive)
+    console.log(manAlive)
+
 });

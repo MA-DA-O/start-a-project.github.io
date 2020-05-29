@@ -67,8 +67,8 @@ if (click !== 0 && click % 4 == 0) {
 }
 
 console.log(days);
+// 使用克隆可缩减至5行代码。。。
 for (let i = 0; i <= days - 1; i++) {
-    // console.log(i);
     // 根据天数生成动态的天数页面
     $("main").append('<div class="m-box"></div>');
     $(".m-box").eq(i).append('<button class="m-b-top"></button>');
