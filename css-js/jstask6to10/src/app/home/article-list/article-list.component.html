@@ -1,0 +1,205 @@
+<div class="main">
+  <div class="status-bar container">
+    <div class="top-wrap" nz-row>
+      <div nz-col nzSpan="16" class="time-wrap">
+        <p class="status-p">更新时间</p>
+        <!--  [nzDisabledDate]="disabledDate" -->
+        <div class="time-1 example-input">
+          <nz-date-picker
+            class="days"
+            [(ngModel)]="startTime"
+            (ngModelChange)="onChange($event)"
+          ></nz-date-picker>
+          <br />
+          <br />
+        </div>
+        <i nz-icon nzType="minus" nzTheme="outline" class="icon"></i>
+        <div class="time-2 example-input">
+          <nz-date-picker
+            class="days"
+            [(ngModel)]="endTime"
+            (ngModelChange)="onChange($event)"
+          ></nz-date-picker>
+
+          <nz-modal
+            [(nzVisible)]="isVisible"
+            nzTitle="提示："
+            (nzOnCancel)="handleCancel()"
+            (nzOnOk)="handleOk()"
+          >
+            <p>您选择的日期不正确</p>
+          </nz-modal>
+        </div>
+      </div>
+      <div nz-col nzSpan="8" class="df" style="padding-right: 0.15rem;">
+        <p class="status-p">类型&nbsp;&nbsp;&nbsp;</p>
+        <nz-select class="select" [(ngModel)]="listModul.type">
+          <nz-option nzValue="" nzLabel="全部"></nz-option>
+          <nz-option nzValue="0" nzLabel="首页banner"></nz-option>
+          <nz-option nzValue="1" nzLabel="找职业banner"></nz-option>
+          <nz-option nzValue="2" nzLabel="精英banner"></nz-option>
+          <nz-option nzValue="3" nzLabel="行业大图"></nz-option>
+        </nz-select>
+      </div>
+    </div>
+    <div class="bottom-wrap" nz-row>
+      <div nz-col nzSpan="9" class="df" style="padding-right: 29px;">
+        <p class="status-p" style="margin: 0 29px;">状态</p>
+        <nz-select [(ngModel)]="listModul.status">
+          <nz-option nzValue="" nzLabel="全部"></nz-option>
+          <nz-option nzValue="1" nzLabel="草稿"></nz-option>
+          <nz-option nzValue="2" nzLabel="上线"></nz-option>
+        </nz-select>
+      </div>
+
+      <div nz-col nzSpan="15" class="df btn-wrap">
+        <div class="btn-wrap">
+          <button nz-button nzType="primary" class="green" (click)="clear()">
+            清空
+          </button>
+          <button nz-button nzType="primary"class="orange" (click)="clickSearch()">
+            搜索
+          </button>
+        </div>
+      </div>
+    </div>
+    <div></div>
+  </div>
+  <div class="article-lise container">
+    <div class="headline container">
+      <p>Article管理</p>
+      <div class="btn-wran">
+        <button nz-button class="orange" nzType="primary">保存排序</button>
+        <button
+          nz-button
+          nzType="primary"
+          class="margin-r0"
+          [routerLink]="['/home', 'newly']"
+          class="green"
+          style="margin-right: 0;"
+        >
+          +新增
+        </button>
+      </div>
+    </div>
+    <div class="content-list container">
+      <div style="width: 100%;" *ngIf="data">
+        <nz-table
+          #ajaxTable
+          [nzShowPagination]="true"
+          [nzFrontPagination]="false"
+          [nzData]="dataObj"
+          [nzTotal]="data.total"
+          [(nzPageIndex)]="listModul.page"
+          [(nzPageSize)]="listModul.size"
+          (nzPageIndexChange)="searchData()"
+          (nzPageSizeChange)="searchData()"
+          nzShowSizeChanger
+        >
+          <thead>
+            <tr>
+              <th class="text-aline">序号</th>
+              <th class="text-aline">图片</th>
+              <th class="text-aline">类型</th>
+              <th class="text-aline">标题</th>
+              <th class="text-aline">创建者</th>
+              <th class="text-aline">创建时间</th>
+              <th class="text-aline">修改时间</th>
+              <th class="text-aline">状态</th>
+              <th class="text-aline">操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              style="background: floralwhite;"
+              *ngFor="let item of dataObj; index as index"
+            >
+              <td>
+                <p style="width: 30px; text-align: center;">{{ index + 1 }}</p>
+              </td>
+              <td><img class="center" src="{{ item.img }}" alt="" /></td>
+              <td>{{ item.title }}</td>
+              <td>{{ item.type | typeclass }}</td>
+              <td>
+                <p style="width: 50px; text-align: center;">
+                  {{ item.author }}
+                </p>
+              </td>
+              <td>
+                <p style="width: 80px; text-align: center;">
+                  {{ item.createAt | date: "yyyy-MM-dd HH:MM:SS" }}
+                </p>
+              </td>
+              <td>
+                <p style="width: 80px; text-align: center;">
+                  {{ item.updateAt | date: "yyyy-MM-dd HH:MM:SS" }}
+                </p>
+              </td>
+              <td>
+                <p style="width: 30px; text-align: center;">
+                  {{ item.status | status }}
+                </p>
+              </td>
+              <td>
+                <div class="btn-wrap" class="center">
+                  <button
+                    nz-button
+                    nzType="primary"
+                    class="roundness-btn bg-yellow"
+                    *ngIf="item.status === 1"
+                    (click)="ClickOnline(item.id, 2)"
+                  >
+                    下线
+                  </button>
+                  <button
+                    nz-button
+                    nzType="primary"
+                    class="roundness-btn bg-yellow"
+                    *ngIf="item.status === 2"
+                    (click)="ClickOnline(item.id,1)"
+                  >
+                    上线
+                  </button>
+                  <nz-modal
+                    [(nzVisible)]="online"
+                    nzTitle="提示："
+                    (nzOnCancel)="OnlineCancel()"
+                    (nzOnOk)="OnlineOK()"
+                  >
+                    <p *ngIf="onlineStatus === 2">确定要下线吗？</p>
+                    <p *ngIf="onlineStatus === 1">确定要上线吗？</p>
+                  </nz-modal>
+                  <button
+                    nz-button
+                    nzType="primary"
+                    class="roundness-btn bg-green"
+                    (click)="redact(item.id)"
+                  >
+                    编辑
+                  </button>
+
+                  <button
+                    nz-button
+                    nzType="primary"
+                    class="roundness-btn bg-red"
+                    (click)="DelectShowModal(item.id)"
+                  >
+                    删除
+                  </button>
+                  <nz-modal
+                    [(nzVisible)]="delect"
+                    nzTitle="提示："
+                    (nzOnCancel)="delectCancel()"
+                    (nzOnOk)="delectOK()"
+                  >
+                    <p>确定删除该条目？</p>
+                  </nz-modal>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </nz-table>
+      </div>
+    </div>
+  </div>
+</div>

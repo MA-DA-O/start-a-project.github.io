@@ -1,0 +1,80 @@
+<!-- <body>
+  <header></header>
+  <main class="bg-img">
+    <div class="input-wrap">
+      <div class="top-img"></div>
+      <div class="input-box">
+        <div class="user-img"></div>
+        <input
+          class="name"
+          type="text"
+          placeholder="输入账号"
+          [(ngModel)]="user"
+        />
+      </div>
+      <div class="input-box">
+        <div class="password-img"></div>
+        <input
+          class="password"
+          type="password"
+          placeholder="输入密码"
+          [(ngModel)]="password"
+        />
+      </div>
+      <button nz-button [nzType]="'primary'" (click)="showModal()">
+        <span>登录</span>
+      </button>
+      <nz-modal
+        [(nzVisible)]="isVisible"
+        nzTitle="提示"
+        (nzOnCancel)="handleCancel()"
+        (nzOnOk)="handleOk()"
+      >
+        <p>输入的账户密码不正确</p>
+      </nz-modal>
+
+    </div>
+  </main>
+  <footer></footer>
+</body> -->
+
+<main class="bg-img">
+  <div class="input-wrap">
+    <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="请输入您的账号">
+          <nz-input-group nzPrefixIcon="user">
+            <input type="text" nz-input formControlName="userName" placeholder="账号" [(ngModel)]="user"/>
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="请输入您的密码">
+          <nz-input-group nzPrefixIcon="lock">
+            <input type="password" nz-input formControlName="password" placeholder="密码"[(ngModel)]="password" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <div nz-row class="login-form-margin">
+        <div nz-col [nzSpan]="12">
+          <label nz-checkbox formControlName="remember">
+            <span style="color: #fff;">记住我</span>
+          </label>
+        </div>
+        <div nz-col [nzSpan]="12">
+          <a class="login-form-forgot">忘记密码</a>
+        </div>
+      </div>
+      <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'" (click)="showModal()">登录</button>
+      <!-- Or <a> 注册 </a> -->
+      <nz-modal
+        [(nzVisible)]="isVisible"
+        nzTitle="提示"
+        (nzOnCancel)="handleCancel()"
+        (nzOnOk)="handleOk()"
+      >
+      <p >您所输入的{{hint}}</p>
+      </nz-modal>
+    </form>
+  </div>
+</main>

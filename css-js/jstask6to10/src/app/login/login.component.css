@@ -1,0 +1,87 @@
+@import "~ng-zorro-antd/ng-zorro-antd.min.css";
+html,
+body {
+    margin: 0;
+}
+
+.bg-img {
+    background: url(../../assets/img/bg-img.jpg) no-repeat center;
+    background-size: cover;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.input-wrap {
+    position: relative;
+    width: 50%;
+    height: 250px;
+    background: #f1f0f0;
+    border-radius: 10px;
+    margin-top: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 76%;
+    height: 25px;
+    margin: 10px 0;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+}
+
+input[type=text] {
+    outline: none;
+    border: 0;
+    height: 22px;
+    width: 100%;
+}
+
+input[type=password] {
+    outline: none;
+    border: 0;
+    height: 22px;
+    width: 100%;
+}
+
+.top-img {
+    background: url(../../assets/img/top-icon.png) no-repeat center;
+    background-size: 70px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    position: absolute;
+    top: -32px;
+}
+
+.user-img {
+    background: url(../../assets/img/id-icon.png) no-repeat center;
+    background-size: 15px;
+    width: 35px;
+    height: 18px;
+}
+
+.password-img {
+    background: url(../../assets/img/pass-icom.png) no-repeat center;
+    background-size: 15px;
+    width: 35px;
+    height: 18px;
+}
+
+button {
+    height: 40px;
+    width: 76%;
+    background: orange;
+    border-radius: 5px;
+    margin: 10px 0 0;
+    outline: none;
+}

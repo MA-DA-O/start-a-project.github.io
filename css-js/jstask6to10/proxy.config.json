@@ -1,0 +1,6 @@
+{
+  "/ajax/":{
+  "target":"http://dev.admin.carrots.ptteng.com/",
+  "changeOrigin": true
+  }
+}

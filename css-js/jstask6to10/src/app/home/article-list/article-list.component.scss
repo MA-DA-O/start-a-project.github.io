@@ -1,0 +1,200 @@
+p {
+  margin: 0;
+}
+.main {
+  width: 100%;
+  border: 1px solid #e6e6e6;
+  border-top: 0;
+  padding-top: 0.2rem;
+  background: floralwhite;
+  min-height: 90.4vh;
+}
+ul {
+  border: 0 !important;
+}
+button {
+  border: 0;
+}
+.df {
+  display: flex;
+  align-items: center;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text-aline {
+  text-align: center;
+  background: floralwhite;
+}
+.container {
+  width: 97%;
+  margin: auto;
+}
+.green {
+  background: #21b6b4;
+  border-radius: 10px;
+}
+.orange{
+  background: #ffb849;
+  border-radius: 10px;
+}
+.status-bar {
+  height: 1.2rem;
+  background: #e6e6e6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  border: 1px solid;
+  padding: 0.15rem auto;
+}
+
+input[type="text"] {
+  outline: none;
+}
+
+.top-wrap {
+  display: flex;
+  flex-flow: wrap;
+  div {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.bottom-wrap {
+  display: flex;
+}
+
+.headline-input {
+  width: 90%;
+  height: 0.15rem;
+  background: #fff;
+}
+
+.time-wrap {
+  width: 100%;
+  .time-1 {
+    width: 45%;
+    position: relative;
+  }
+  .time-2 {
+    width: 45%;
+    position: relative;
+    margin: 0 0.15rem 0 0;
+  }
+}
+
+.calendar-1 {
+  position: absolute;
+  right: 5px;
+}
+
+.calendar-2 {
+  position: absolute;
+  right: 5px;
+}
+
+.icon {
+  margin: 0 0.15rem;
+}
+
+.status-p {
+  display: flex;
+  flex-shrink: 0;
+  margin: 0 0.15rem;
+}
+
+.example-input .ant-input {
+  width: 100%;
+}
+.ant-select {
+  width: 100%;
+}
+[nz-button] {
+  width: 0.8rem;
+  margin-right: 0.15rem;
+}
+.margin-r0 {
+  margin-right: 0 !important ;
+}
+.btn-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.article-lise {
+  border: 1px solid #e6e6e6;
+  margin-top: 0.2rem;
+}
+.headline {
+  height: 0.4rem;
+  width: 100%;
+  border-bottom: 1px solid #e6e6e6;
+  @extend .df;
+  justify-content: space-between;
+  padding: 0 1.5%;
+}
+.content-list {
+  margin: 0.2rem auto;
+  border: 1px solid #e6e6e6;
+}
+.top-title {
+  height: 0.4rem;
+  width: 100%;
+  background: #eaeaea;
+  border: 1px solid #e6e6e6;
+  p {
+    font-size: 0.14rem;
+    font-weight: 600;
+  }
+}
+
+img {
+  height: 1rem;
+  width: 1rem;
+}
+.details {
+  height: 1.1rem;
+  width: 100%;
+  border-bottom: 1px solid #e6e6e6;
+  p {
+    font-size: 0.14rem;
+  }
+}
+.roundness-btn {
+  width: 0.6rem;
+  height: 0.4rem;
+  text-align: center;
+  margin: 0.1rem !important;
+}
+.bg-red {
+  background: #da542e;
+  border-radius: 8px;
+}
+.bg-yellow {
+  background: #ffb849; border-radius: 8px;
+}
+.bg-green {
+  background: #2596d4;
+  border-radius: 8px;
+}
+nz-date-picker,
+nz-month-picker,
+nz-year-picker,
+nz-range-picker,
+nz-week-picker {
+  margin: 0 8px 12px 0;
+}
+.days {
+  width: 100%;
+  margin: 0;
+}
+.ant-table-tbody > tr > td {
+  text-align: center !important;
+}
+// ::ng-deep .ant-menu ul{
+//   border-right: 0!important;
+// }

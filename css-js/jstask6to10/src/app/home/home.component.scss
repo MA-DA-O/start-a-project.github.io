@@ -1,0 +1,111 @@
+** {
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  background: #393939;
+}
+
+.t-nav-a {
+  font-size: 0.2rem;
+  color: #aeb2b7;
+  margin: 0 0.1rem;
+}
+
+.li-a {
+  font-size: 0.15rem;
+}
+
+.top-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 2rem;
+  font-size: 0.2rem;
+  color: #aeb2b7;
+}
+
+.user {
+  margin-right: 0.35rem;
+}
+
+[nz-menu] {
+  width: 200px;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 1rem;
+  border-bottom: 1px solid #e6e6e6;
+  background: #393939;
+}
+
+.pd-right {
+  padding-right: 12px;
+}
+
+.sidebar {
+  width: 200px;
+  height: 100%;
+  border: 1px solid #e6e6e6;
+  border-right: 0;
+  border-top: 0;
+  border-left: 0;
+  border-bottom: 0;
+}
+
+.sidebar-top {
+  color: #aeb2b7;
+  display: flex;
+  align-items: center;
+  height: 0.48rem;
+  border: 1px solid #e6e6e6;
+  border-top: 0;
+  border-left: 0;
+  padding-left: 0.24rem;
+  font-size: 0.2rem;
+  font-weight: 600;
+  background: #393939;
+}
+
+::ng-deep .ant-menu-inline .ant-menu-submenu {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+// 内部li
+.ant-menu-inline .ant-menu-item {
+  margin: 0;
+  border: 1px solid #eaeaea;
+  border-bottom: 0;
+  border-left: 0;
+  background: #fff;
+}
+
+::ng-deep .ant-menu-submenu-title .anticon {
+  font-size: 0.2rem;
+  font-weight: 600;
+}
+
+::ng-deep .ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
+  font-size: 0.2rem;
+  font-weight: 600;
+  color: #aeb2b7;
+}
+
+.main-right {
+  background: floralwhite;
+  width: 100%;
+  min-height: 90.4vh;
+}
+
+li {
+  border-right: 0 !important;
+  background: #393939;
+}
+ul {
+  background: #393939;
+}

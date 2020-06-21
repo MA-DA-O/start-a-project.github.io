@@ -1,0 +1,195 @@
+<main>
+  <div class="top-headline df">
+    <p>新增/编辑</p>
+  </div>
+  <div class="container">
+    <form [formGroup]="profileForms">
+      <div class="df">
+        <p class="col-end">类型</p>
+        <nz-select formControlName="type">
+          <nz-option nzValue="0" nzLabel="首页banner"></nz-option>
+          <nz-option nzValue="1" nzLabel="找职位banner"></nz-option>
+          <nz-option nzValue="2" nzLabel="找精英banner"></nz-option>
+          <nz-option nzValue="3" nzLabel="行业大图"></nz-option>
+        </nz-select>
+        <button (click)="huoqu()">点我点我顶顶顶顶顶顶顶顶顶顶顶顶顶顶</button>
+        <!-- 此处若是行业大图，则显示出来。非必填 -->
+        <div *ngIf="profileForms.value.type == 3">
+          <nz-select
+          style="z-index: 99999;"
+
+            (change)="change()"
+            formControlName="industry"
+          >
+            <nz-option nzValue="0" nzLabel="移动互联网"></nz-option>
+            <nz-option nzValue="1" nzLabel="电子商务"></nz-option>
+            <nz-option nzValue="2" nzLabel="企业服务"></nz-option>
+            <nz-option nzValue="3" nzLabel="O2O"></nz-option>
+            <nz-option nzValue="4" nzLabel="教育"></nz-option>
+            <nz-option nzValue="5" nzLabel="金融"></nz-option>
+            <nz-option nzValue="6" nzLabel="游戏"></nz-option>
+          </nz-select>
+        </div>
+      </div>
+      <!-- 表单组声明form -->
+
+      <div class="df margin-top">
+        <p class="col-end">标题名称</p>
+        <label>
+          <input id="title" nz-input required formControlName="title"
+        /></label>
+        <div style="padding-left: 20px;">
+          <div *ngIf="title.invalid && (title.dirty || title.touched)">
+            <div *ngIf="title.errors.required">
+              标题是必填的。
+            </div>
+            <div *ngIf="title.errors.minlength">
+              至少要4个字符长度。
+            </div>
+            <div *ngIf="title.errors.maxlength">
+              标题不能超过12个字符。
+            </div>
+            <h1>{{ profileForms.value.title | json }}</h1>
+          </div>
+        </div>
+      </div>
+      <div class="df">
+        <div class="df margin-top" style="width: 70%;">
+          <p class="col-end">跳转链接</p>
+          <input
+            nz-input
+            placeholder=" "
+            formControlName="jumpLink"
+            (change)="change()"
+          />
+        </div>
+        <div *ngIf="jumpLink.invalid && (jumpLink.dirty || jumpLink.touched)">
+          <div *ngIf="jumpLink.errors.required">
+            URL必填。
+          </div>
+        </div>
+      </div>
+
+      <!-- <div *ngIf="jumpLink.errors.minlength">
+        至少要4个字符长度。
+      </div> -->
+      <div class="df margin-top">
+
+        <p class="col-end" style="display: flex;flex-shrink: 0;">说明</p>
+        <editor
+          (onPostData)="PostData($event)"
+          (change)="publishTopic()"
+        ></editor>
+
+        <!-- <h1>{{ profileForms.value | json}}</h1> -->
+      </div>
+    </form>
+
+    <div class="df margin-top">
+      <p class="col-end"><span>*</span>配图</p>
+      <!-- 下面是自己写的angular上传组件。。 -->
+      <button nz-button nzType="dashed"style="padding:0;">
+        <label
+          (click)="deleteImageUpload()"
+          for="files"
+          type="button"
+          style="width: 125px; height: 25px;"
+          >选择文件</label
+        >
+      </button>
+
+      <input
+        id="files"
+        type="file"
+        accept="image/*"
+        [(ngModel)]="imgdom"
+        (change)="get($event)"
+        style="display: none;"
+      />
+    </div>
+    <div>
+      <!-- 选中文件时的img占位符。只在“source”不为空时显示  *ngIf="percent === 100"-->
+      <img
+        *ngIf="percent === 100 || aaa "
+        style="max-width: 120px; max-height: 150px; margin-left: 95px;"
+        [src]="source"
+      />
+    </div>
+    <div class="margin-left" *ngIf="imgFormData">
+      <nz-table nzShowPagination="false" [nzData]="a">
+        <!---->
+        <thead>
+          <tr>
+            <th class="textCenter" style="width: 100px;">图片名</th>
+            <th class="textCenter">文件大小</th>
+            <th class="textCenter" style="width: 100px;">进度</th>
+            <th class="textCenter">操作</th>
+            <th class="textCenter">操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="textCenter">
+              <span *ngIf="imgFormData; else fileName">{{
+                imgFormData.name
+              }}</span
+              ><ng-template #fileName class="textCenter" style="width: 100px;"
+                >图片名称</ng-template
+              >
+            </td>
+            <td class="textCenter">
+              <span *ngIf="imgFormData; else fileSize">{{
+                getfilesize(imgFormData.size)
+              }}</span
+              ><ng-template #fileSize class="textCenter">文件</ng-template>
+            </td>
+            <td class="textCenter">
+              <nz-progress [nzPercent]="percent" nzSize="small" style="width: 100px;"></nz-progress>
+            </td>
+            <td class="textCenter">
+              <span *ngIf="percent === 100; else elseBlock">✔</span
+              >
+              <ng-template #elseBlock>×</ng-template>
+              <!-- <nz-progress [nzPercent]="percent" nzType="circle" [nzWidth]="50"></nz-progress> -->
+            </td>
+            <td class="textCenter">
+              <!-- <button
+                nz-button
+                [nzType]="'primary'"
+                [nzLoading]="uploading"
+                (click)="handleUpload()"
+                [disabled]="fileList.length == 0"
+                style="margin-top: 16px;"
+                (nzChange)="handleChange($event)"
+              >
+                {{ uploading ? "Uploading" : "上传" }}
+              </button> -->
+              <button (click)="postAddedImg()"[disabled]="!upclick()">上传</button>
+              <button (click)="deleteImageUpload()">
+                删除
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </div>
+    <div class="margin-left margin-top">
+      <button
+        [disabled]="!test()"
+        class="margin-right"
+        (click)="postAdded(1,$event)"
+      >
+        立即上线
+      </button>
+      <button
+        [disabled]="!test()"
+
+        class="margin-right"
+        (click)="postAdded(2,$event)"
+      >
+        存为草稿
+      </button>
+      <button (click)='cancel()'>取消</button>
+    </div>
+  </div>
+</main>

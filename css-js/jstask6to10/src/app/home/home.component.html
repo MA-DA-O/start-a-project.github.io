@@ -1,0 +1,65 @@
+<div class="top-nav">
+  <div class="top-icon">萝卜多后台管理系统</div>
+  <div class="user">
+    <a href="" class="t-nav-a">管理员</a>
+    <i nz-icon nzType="user" nzTheme="outline" class="t-nav-a"></i>
+    <a href="" class="t-nav-a">刘德华</a>
+    <span class="t-nav-a">|</span>
+    <a href="" class="t-nav-a">退出</a>
+  </div>
+</div>
+<main>
+
+  <div class="sidebar">
+    <div class="sidebar-top">
+      <i nz-icon nzType="home" nzTheme="outline" class="pd-right"></i>欢迎页
+    </div>
+    <ul nz-menu nzMode="inline">
+      <li nz-submenu nzTitle="信息管理" nzIcon="tool" class="li-css">
+        <ul>
+          <li nz-menu-item *ngFor="let q of navChild[0] ">
+            <a routerLink="" class="li-a">{{q}}</a>
+          </li>
+          <!-- <li nz-menu-item>
+            <a routerLink="" class="li-a">职位信息</a>
+          </li> -->
+        </ul>
+      </li>
+      <li
+        nz-submenu
+        [nzOpen]="article"
+        nzTitle="内容管理"
+        nzIcon="tool"
+        class="li-css"
+      >
+        <ul>
+          <li nz-menu-item [nzSelected]="article">
+            <a  (click)='list()' class="li-a">article管理</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="后台管理" nzIcon="tool" class="li-css">
+        <ul>
+          <li nz-menu-item *ngFor="let item of navChild[2]">
+
+            <a href={{item.url}} class="li-a">{{item.name}}</a>
+          </li>
+          <!-- <li nz-menu-item>
+            <a routerLink="" class="li-a">角色管理</a>
+          </li>
+          <li nz-menu-item>
+            <a routerLink="" class="li-a">修改密码</a>
+          </li>
+          <li nz-menu-item>
+            <a routerLink="" class="li-a">模块管理</a>
+          </li> -->
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="main-right">
+    <router-outlet></router-outlet>
+    <!-- <app-article-list></app-article-list> -->
+    <!-- <app-article-newly-increased></app-article-newly-increased> -->
+  </div>
+</main>

@@ -1,0 +1,114 @@
+main {
+  width: 97%;
+  margin: 0.2rem auto 0;
+  border: 1px solid #e6e6e6;
+  height: 88.5vh;
+  background: floralwhite;
+}
+
+p {
+  margin: 0;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.margin-top {
+  margin: 0.1rem 0;
+}
+
+.df {
+  display: flex;
+  align-items: center;
+}
+
+.df p {
+  width: 0.8rem;
+}
+
+.conter {
+  justify-content: center;
+}
+
+.col-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 0.15rem;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+  padding-top: 0.6rem;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.margin-left {
+  margin-left: 0.95rem;
+}
+
+.margin-right {
+  margin-right: .2rem;
+}
+
+.grid {
+  width: 100%;
+  height: 0.3rem;
+}
+
+.top-headline {
+  height: 0.6rem;
+  width: 100%;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.top-headline p {
+  width: auto;
+  margin: 0 0.2rem;
+  font-size: 0.2rem;
+  font-weight: 600;
+}
+
+nz-select {
+  margin: 0 8px 10px 0;
+  width: 250px;
+}
+
+input {
+  width: 80%;
+}
+
+.thumbnail {
+  width: 300px;
+  height: 140px;
+  background: gray;
+}
+
+.inputProgress {
+  width: 0;
+  height: 5px;
+  background: greenyellow;
+  transition: width 3s;
+}
+
+#account--editor {
+  width: 100%;
+  min-height: 330px;
+  height: auto;
+}
+
+#title {
+  width: 250px;
+}
+
+nz-progress {
+  width: 50px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
